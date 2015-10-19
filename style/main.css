@@ -1,0 +1,41 @@
+@CHARSET "windows-1255";
+
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+	height:49px;
+	
+	
+}
+
+.centerd{
+	width:1170px;
+	height:inherit ; 
+	margin: 0 auto;
+	
+}
+
+a {
+	display:inline-block;
+    color: #000;
+    text-decoration: none;
+    margin:15px 10px;
+}
+
+header section{
+	height:105px;
+	background-color: #fb0002; ;
+	
+}
+
+input[type="search"]{
+	width:335px;
+	height:45px ; 
+	margin: 20px 0px 0px 340px;
+	border:none;
+}
+
