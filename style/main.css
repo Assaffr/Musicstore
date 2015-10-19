@@ -99,27 +99,24 @@ header .centerd div{
 
 #top_pics div:nth-child(1){
 	float:left;
+	width:33.33%;
 
 }
 
 #top_pics div:nth-child(1) img{
-	height:480px;
-	width:480px;
-	
+	width:100%;
 }
+
 #top_pics div:nth-child(2) {
 	float:left;
-	width:980px;
-
+	width:66.66%;
 
 	
 }
 
 #top_pics div:nth-child(2) img{
-	height:240px;
-	width:240px;
-	margin:0px;
-	
+	width:24.5%;
+	height: auto;
 }
 
 
