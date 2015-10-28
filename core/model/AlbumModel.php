@@ -49,9 +49,19 @@ class AlbumModel extends Model {
 		return $results;	
 	}
 	
-	public function searchAlbums(  ) {
+	public function searchAlbum( $data ) {
+		$results = $this->_database->query( "(SELECT * FROM `albums` WHERE `album_name` LIKE '%".$data."%') UNION (SELECT * FROM `albums` WHERE `album_artist` LIKE '%".$data."%')" );
 		
-	}
+		if ( $results ) {
+			$albums = array();
+			while ( $row = $results->fetch_assoc() )
+				$albums[] = $row;
+
+			return $albums;
+		}
+		
+		return NULL;
+	}	
 	
 
 }

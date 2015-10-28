@@ -10,7 +10,7 @@ class AlbumController extends Controller {
     }
 	
 	//GOES TO ALBUMMODEL FUNCTIONS, CHECKS RESULT AND RETURNS RESULT/ERROR/SUCCESS MSG
-
+	//validation goes here ---- no-  with validation controller
 
 	public function insertNewAlbum( $info ) {
 		
@@ -35,7 +35,15 @@ class AlbumController extends Controller {
 		
 		return $albums;
 	}
-	
+
+	public function searchAlbum( $data ) {
+		$albums = $this->model->searchAlbum( $data );
+		
+		if ( !$albums )
+			return null;
+		
+		return $albums;
+	}	
 	
 	public function deleteAlbum( $id ) {
 		$success = $this->model->deleteAlbum($id);
