@@ -4,6 +4,16 @@ body {
 	margin: 0px;
 	padding: 0px;
 	font-family: Arial, Helvetica, sans-serif;
+	background-color:#EAEAEA;
+}
+
+.C-B{
+	clear:both;
+}
+
+header{
+	background-color:#fff;
+	
 }
 
 nav {	
@@ -21,9 +31,14 @@ figure{
 }
 
 .centerd{
-	max-width:864px;
+	max-width:865px;
 	height:inherit ; 
 	margin: 0 auto;
+
+	
+}
+
+.top-nav{
 	padding: 8.5px 0px;
 	
 }
@@ -120,9 +135,10 @@ a {
 }
 
 #top-bar-pics{
-	height:534px;
+	height:473px;
 	width:1422px;
 	margin:0 auto;
+	margin-bottom:37px;
 }
 
 #top-bar-pics figure{
@@ -151,5 +167,46 @@ a {
 #top-bar-pics figure img{
 	height:100%;
 	width:100%;
+	
+}
+main aside{
+	width:200px;
+	float:left;
+	
+}
+
+main aside ul{
+	list-style-type:none;
+	background-color:#fff;
+	padding:0;
+	margin:0; 
+	color:#fff;
+	
+}
+
+main aside ul li{
+	
+	padding:6px; 
+	background-color:#fd0002;
+	margin-bottom:1px;
+}
+
+#content{
+	float:left;
+	margin-left:22px;
+	
+}
+
+#content .head-box{
+	width:623px;
+	height:22px;
+	background-color:#fff;
+	padding: 4px 10px;
+	
+}
+
+#content .head-box h3{
+	margin:0;
+	font-weight:normal;
 	
 }
