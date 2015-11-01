@@ -16,6 +16,7 @@ class AlbumModel extends Model {
 		return $results;
 	}
 	
+
 	public function getAllAlbums() {
 		$result = $this->_database->query("
 					SELECT * FROM albums;
