@@ -1,25 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="musicstore">
 	<head>
 		<link rel="stylesheet" href="style/main.css">
 		<link rel="stylesheet" type="text/css" href="style/flaticon.css"> 
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		<meta charset="windows-1255">
 		<title>Musicstore</title>
 	</head>
 	
-	<body>
+	<body ng-controller="MainController">
 		<header>
-			<div class="centerd top-nav">
-				 <nav>
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">My Account</a></li>
-						<li><a href="#">My Wishlist</a></li>
-						<li><a href="#">Checkout</a></li>
-						<li><a href="#">Log In</a></li>
-					</ul>
-				</nav>	
-			</div>
+			<centerd-top-nav>
+			</centerd-top-nav>
 		</header>
 		
 		
@@ -36,68 +28,16 @@
 		
 			
 		<section id="top-bar-pics">
-			<figure>                      <!-- this will repeat 9 times -->
+			<figure ng-repeat="album in albums | orderBy:'-album_created' | limitTo:9">
 				<img src="images/john_mayall_-_rock_the_blues_tonight_1.png" alt="small one1">
 				<figcaption>
+				{{album.album_name}}
+				<br>
+				{{album.album_artist}}
 				
 				</figcaption>
 			</figure>
 			
-			<figure>                     
-				<img src="images/lady_gaga_-_disco_heaven_1.png" alt="small one2">
-				<figcaption>
-				
-				</figcaption>
-			</figure>
-			
-			<figure>                     
-				<img src="images/henrik_freischlader_band_-_the_blues_1.png" alt="small one3">
-				<figcaption>
-				
-				</figcaption>
-			</figure>
-			
-			<figure>                     
-				<img src="images/pink_-_greatest_hits_so_far_1.png" alt="small one4">
-				<figcaption>
-				
-				</figcaption>
-			</figure>
-
-			<figure>                     
-				<img src="images/ultimate_dance_party_1.png" alt="small one5">
-				<figcaption>
-				
-				</figcaption>
-			</figure>
-						
-			<figure>                     
-				<img src="images/tom_schuman_-_extremities_1990_1.png" alt="small one6">
-				<figcaption>
-				
-				</figcaption>
-			</figure>
-						
-			<figure>                     
-				<img src="images/top_gear_-_full_throttle_1.png" alt="small one7">
-				<figcaption>
-				
-				</figcaption>
-			</figure>
-						
-			<figure>                     
-				<img src="images/john_mayall_-_rock_the_blues_tonight_1.png" alt="small one1">
-				<figcaption>
-				
-				</figcaption>
-			</figure>
-						
-			<figure>                     
-				<img src="images/the_philip_cohen_collection_beatles_-_69_rehearsals_1.png" alt="small one8">
-				<figcaption>
-				
-				</figcaption>
-			</figure>			
 			<div class="C-B"></div>
 		</section>
 		
@@ -117,6 +57,25 @@
 						<li>Rock-pop</li>
 					</ul>
 				</nav>
+				
+				<div id="new-couple">
+				
+					<figure>                      <!-- this will repeat 2 times -->
+						<img src="images/henrik_freischlader_band_-_the_blues_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      <!-- this will repeat 2 times -->
+						<img src="images/justin_bieber_-_my_world_2.0_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+				
+				</div>
+				
 			</aside>
 			
 			<section id="content">
@@ -125,10 +84,65 @@
 					<h3>New Products</h3>
 				</div>
 				
+				<div id="new-products">
+					<figure>                      <!-- this will repeat 12 times -->
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>					
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>	
+									
+				</div>
 				
 			</section>	
 			
 			<div class="C-B"></div>
 		</main>
+		<script src="app/app.js"></script>
+		<script src="app/Shared/Modules.js"></script>
+		<script src="app/album/AlbumsDirective.js"></script>
+		<script src="app/album/AlbumsFactory.js"></script>
 	</body>
 </html>

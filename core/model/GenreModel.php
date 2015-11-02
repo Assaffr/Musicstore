@@ -23,7 +23,7 @@ class GenreModel extends Model {
 	
 	public function getAlbumByGenre( $id ) {
 		$result = $this->_database->query("
-					
+					SELECT albums.album_id, albums.album_name FROM albums INNER JOIN genres_to_albums ON genres_to_albums.album_id = albums.album_id WHERE genres_to_albums.genre_id = ". $id ."
 				");
 		$albums = array();
 		while ($row = mysqli_fetch_assoc ($result) )
