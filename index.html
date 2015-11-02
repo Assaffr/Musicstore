@@ -3,7 +3,7 @@
 	<head>
 		<link rel="stylesheet" href="style/main.css">
 		<link rel="stylesheet" type="text/css" href="style/flaticon.css"> 
-		<meta charset="windows-1255">
+		<meta charset="utf-8">
 		<title>Musicstore</title>
 	</head>
 	
@@ -25,7 +25,7 @@
 		
 		<section id="top-bar">
 			<div class="centerd">
-				<h1>MUSIC</h1>
+				<a href="index.html"><h1>MUSIC</h1></a>
 				<input type="text" name="search" placeholder="Search">
 				<div id="cart_icon"><span>0</span></div>
 				<div id="welcom"><span>Welcome to our<br> online store!</span></div>
@@ -39,7 +39,8 @@
 			<figure>                      <!-- this will repeat 9 times -->
 				<img src="images/john_mayall_-_rock_the_blues_tonight_1.png" alt="small one1">
 				<figcaption>
-				
+					<span>Rock the blues tonight</span><br>
+					<span>John Mayall</span>
 				</figcaption>
 			</figure>
 			
@@ -106,8 +107,8 @@
 			<aside>
 				<nav>
 					<ul>
-						<li>Alternativ</li>
-						<li>Blues</li>
+						<a href="#/category/Alternativ"><li>Alternativ <span ng-show="">˅</span></li></a><!-- ng-repeat -->
+						<li class="selected">Blues</li>
 						<li>Box sets</li>
 						<li>Classical</li>
 						<li>Country</li>
@@ -117,6 +118,25 @@
 						<li>Rock-pop</li>
 					</ul>
 				</nav>
+				
+				<div id="new-couple">
+				
+					<figure>                      <!-- this will repeat 2 times -->
+						<img src="images/henrik_freischlader_band_-_the_blues_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      <!-- this will repeat 2 times -->
+						<img src="images/justin_bieber_-_my_world_2.0_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+				
+				</div>
+				
 			</aside>
 			
 			<section id="content">
@@ -125,6 +145,57 @@
 					<h3>New Products</h3>
 				</div>
 				
+				<div id="new-products">
+					<figure>                      <!-- this will repeat 12 times -->
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>					
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>
+					
+					<figure>                      
+						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
+						<figcaption>
+				
+						</figcaption>
+					</figure>	
+									
+				</div>
 				
 			</section>	
 			

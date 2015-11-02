@@ -1,4 +1,4 @@
-@CHARSET "windows-1255";
+@CHARSET "utf-8";
 
 body {
 	margin: 0px;
@@ -153,9 +153,25 @@ a {
 	bottom:0px;
 	left:0px;  
 	width:100%;
-	height:20%;
-	background-color:#000;
-	opacity:0.6;
+	height:18%;
+	background-color:rgba(0,0,0,.6);
+	padding-top:2%;
+}
+
+#top-bar-pics figure figcaption span{
+	opacity:100%;
+	margin-left:10px
+	
+}
+
+#top-bar-pics figure figcaption span:nth-child(1){
+	color:#fff;
+	font-size:35px;
+}
+
+#top-bar-pics figure figcaption span:nth-child(3){
+	color:#fb0002;
+	font-size:28px;
 }
 
 #top-bar-pics figure:nth-child(1){
@@ -184,6 +200,20 @@ main aside ul{
 	
 }
 
+main aside ul a {
+	color:inherit;
+	
+}
+
+main aside ul li.selected{
+	background-color:#000;	
+	
+}
+
+main aside ul li span{
+	float:right;
+}
+
 main aside ul li{
 	
 	padding:6px; 
@@ -192,14 +222,17 @@ main aside ul li{
 }
 
 #content{
-	float:left;
 	margin-left:22px;
+	width:643px;
+	float:left;
+
 	
 }
 
 #content .head-box{
 	width:623px;
 	height:22px;
+	margin-bottom:22px;
 	background-color:#fff;
 	padding: 4px 10px;
 	
@@ -210,3 +243,45 @@ main aside ul li{
 	font-weight:normal;
 	
 }
+
+section#content figure{
+	float:left;
+	height:275px;
+	width:200px;
+	margin:0 21px 22px 0;
+	
+}
+
+main figure img{
+	height:200px;
+	width:200px;
+	
+}
+
+section#content figcaption{
+
+	width:200px;
+	height:75px;
+	background-color:#000;
+	margin-top:-4px
+}
+	
+	
+
+#new-products figure:nth-child(3n+0){
+	margin-right:0px;
+	
+}
+
+#new-couple figcaption{
+	width:200px;
+	height:150px;
+	margin-top:-4px;
+	background-color:#fb0002;
+}
+
+#new-couple figure:nth-child(1){
+	margin:22px 0;
+}
+
+
