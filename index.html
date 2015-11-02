@@ -4,7 +4,7 @@
 		<link rel="stylesheet" href="style/main.css">
 		<link rel="stylesheet" type="text/css" href="style/flaticon.css"> 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-		<meta charset="windows-1255">
+		<meta charset="utf-8">
 		<title>Musicstore</title>
 	</head>
 	
@@ -17,7 +17,7 @@
 		
 		<section id="top-bar">
 			<div class="centerd">
-				<h1>MUSIC</h1>
+				<a href="index.html"><h1>MUSIC</h1></a>
 				<input type="text" name="search" placeholder="Search">
 				<div id="cart_icon"><span>0</span></div>
 				<div id="welcom"><span>Welcome to our<br> online store!</span></div>
@@ -46,8 +46,8 @@
 			<aside>
 				<nav>
 					<ul>
-						<li>Alternativ</li>
-						<li>Blues</li>
+						<a href="#/category/Alternativ"><li>Alternativ <span ng-show="">˅</span></li></a><!-- ng-repeat -->
+						<li class="selected">Blues</li>
 						<li>Box sets</li>
 						<li>Classical</li>
 						<li>Country</li>

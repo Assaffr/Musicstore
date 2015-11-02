@@ -16,3 +16,38 @@ $app->get('/genre/:id', function( $id ) use ($genre){
 	
 	echo json_encode( $albums );
 });
+
+//search genre
+$app->get('/search/:data', function( $data ) use ($genre){
+	$genre = $genre->searchgenre( $data );
+	
+	var_dump($genre);
+});
+
+//delete genre
+$app->delete('/genre/:id', function( $id ) use ($genre){
+	$genre = $genre->deletegenre( $id );
+	
+	echo $genre;
+});
+
+// insert new genre
+//this is all behind the scenes so......just enter info here i guess?? then use postman lol
+$app->post('/genre', function() use ($app, $genre){
+	$info = '{
+		"genre_name":"",
+		"genre_genre":"",
+		"genre_duration":"DURATION",
+		"genre_release_year":"RELEASEYEAR",
+		"genre_description":"DESC",
+		"genre_long_description":"LONGDESC",
+		"genre_price":"1"
+		}';
+	
+	$success = $genre->insertNewgenre( json_decode ($info, true) );
+	
+	if ($success)
+		echo "Inserted";
+	else
+		echo "Not inserted";
+});
