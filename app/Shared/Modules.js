@@ -1,0 +1,1 @@
+var AlbumsModule = angular.module( 'Albums', [] );
