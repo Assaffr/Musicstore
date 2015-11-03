@@ -4,16 +4,16 @@
 		<link rel="stylesheet" href="style/main.css">
 		<link rel="stylesheet" type="text/css" href="style/flaticon.css"> 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
 		<meta charset="utf-8">
 		<title>Musicstore</title>
 	</head>
 	
 	<body ng-controller="MainController">
 		<header>
-			<centerd-top-nav>
-			</centerd-top-nav>
+			<centerdtopnav>
+			</centerdtopnav>
 		</header>
-		
 		
 		<section id="top-bar">
 			<div class="centerd">
@@ -29,7 +29,7 @@
 			
 		<section id="top-bar-pics">
 			<figure ng-repeat="album in albums | orderBy:'-album_created' | limitTo:9">
-				<img src="images/john_mayall_-_rock_the_blues_tonight_1.png" alt="small one1">
+				<img src="" alt="small one1">
 				<figcaption>
 				{{album.album_name}}
 				<br>
@@ -46,7 +46,7 @@
 			<aside>
 				<nav>
 					<ul>
-						<a href="#/category/Alternativ"><li>Alternativ <span ng-show="">˅</span></li></a><!-- ng-repeat -->
+						<a href="#/1"><li>Alternative <span ng-show="">˅</span></li></a><!-- ng-repeat -->
 						<li class="selected">Blues</li>
 						<li>Box sets</li>
 						<li>Classical</li>
@@ -142,7 +142,7 @@
 		</main>
 		<script src="app/app.js"></script>
 		<script src="app/Shared/Modules.js"></script>
-		<script src="app/album/AlbumsDirective.js"></script>
 		<script src="app/album/AlbumsFactory.js"></script>
+		<script src="app/album/AlbumsDirective.js"></script>
 	</body>
 </html>
