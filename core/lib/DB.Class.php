@@ -8,7 +8,7 @@
 		public static function getResource(){
 			if (self::$mysqli == NULL){
 				$mysqli = new mysqli('localhost', 'root', '');
-				$mysqli->select_db("musicstore");
+				$mysqli->select_db("musicstoreDB");
 				return $mysqli;
 			}
 		}
