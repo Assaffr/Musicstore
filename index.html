@@ -14,6 +14,7 @@
 			<centerdtopnav>
 			</centerdtopnav>
 		</header>
+		
 		<section id="top-bar">
 			<div class="centerd">
 				<a href="index.html"><h1>MUSIC</h1></a>
@@ -28,7 +29,7 @@
 			
 		<section id="top-bar-pics">
 			<figure ng-repeat="album in albums | orderBy:'-album_created' | limitTo:9">
-				<img ng-src="{{album.image_path}}" alt="small one1">
+				<img src="" alt="small one1">
 				<figcaption>
 				{{album.album_name}}
 				<br>
