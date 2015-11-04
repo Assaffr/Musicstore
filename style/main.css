@@ -149,6 +149,7 @@ a {
 }
 
 #top-bar-pics figure figcaption{
+	color: white;
 	position:absolute;
 	bottom:0px;
 	left:0px;  
@@ -258,7 +259,7 @@ main figure img{
 }
 
 section#content figcaption{
-
+	color: white;
 	width:200px;
 	height:75px;
 	background-color:#000;
@@ -273,6 +274,7 @@ section#content figcaption{
 }
 
 #new-couple figcaption{
+	color: white;
 	width:200px;
 	height:150px;
 	margin-top:-4px;

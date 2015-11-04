@@ -8,6 +8,12 @@ $app->get('/album', function() use ($app, $album){
 	echo json_encode( $albums );
 });
 
+$app->get('/album/latest', function() use ($app, $album){
+	$albums = $album->getLatest18Albums();
+	
+	echo json_encode( $albums );
+});
+
 //get specific album
 $app->get('/album/:id', function( $id ) use ($album){
 	$album = $album->getAlbumByID( $id );

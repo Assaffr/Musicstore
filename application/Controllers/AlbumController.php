@@ -27,6 +27,15 @@ class AlbumController extends Controller {
 		return $albums;
 	}
 	
+	public function getLatest18Albums() {
+		$albums = $this->model->getLatest18Albums();
+		
+		if ( !$albums )
+			return null;
+		
+		return $albums;
+	}
+	
 	public function getAlbumByID( $id ) {
 		$albums = $this->model->getAlbumByID( $id );
 		

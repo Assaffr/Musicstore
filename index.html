@@ -3,145 +3,33 @@
 	<head>
 		<link rel="stylesheet" href="style/main.css">
 		<link rel="stylesheet" type="text/css" href="style/flaticon.css"> 
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
 		<meta charset="utf-8">
 		<title>Musicstore</title>
 	</head>
 	
 	<body ng-controller="MainController">
-		<header>
-			<centerdtopnav>
-			</centerdtopnav>
-		</header>
-		<section id="top-bar">
-			<div class="centerd">
-				<a href="index.html"><h1>MUSIC</h1></a>
-				<input type="text" name="search" placeholder="Search">
-				<div id="cart_icon"><span>0</span></div>
-				<div id="welcom"><span>Welcome to our<br> online store!</span></div>
-				
-			</div>
 
-		</section>
+			<topnav>
+			</topnav>
+			<topbar>
+			</topbar>
 		
-			
-		<section id="top-bar-pics">
-			<figure ng-repeat="album in albums | orderBy:'-album_created' | limitTo:9">
-				<img ng-src="{{album.image_path}}" alt="small one1">
-				<figcaption>
-				{{album.album_name}}
-				<br>
-				{{album.album_artist}}
-				
-				</figcaption>
-			</figure>
-			
-			<div class="C-B"></div>
-		</section>
 		
-		<main class="centerd">
+			<div ng-view></div>
 		
-			<aside>
-				<nav>
-					<ul>
-						<a href="#/1"><li>Alternative <span ng-show="">˅</span></li></a><!-- ng-repeat -->
-						<li class="selected">Blues</li>
-						<li>Box sets</li>
-						<li>Classical</li>
-						<li>Country</li>
-						<li>Dance</li>
-						<li>Heavy metal</li>
-						<li>Jazz</li>
-						<li>Rock-pop</li>
-					</ul>
-				</nav>
-				
-				<div id="new-couple">
-				
-					<figure>                      <!-- this will repeat 2 times -->
-						<img src="images/henrik_freischlader_band_-_the_blues_1.png" alt="small one1">
-						<figcaption>
-				
-						</figcaption>
-					</figure>
-					
-					<figure>                      <!-- this will repeat 2 times -->
-						<img src="images/justin_bieber_-_my_world_2.0_1.png" alt="small one1">
-						<figcaption>
-				
-						</figcaption>
-					</figure>
-				
-				</div>
-				
-			</aside>
-			
-			<section id="content">
-			
-				<div class="head-box">
-					<h3>New Products</h3>
-				</div>
-				
-				<div id="new-products">
-					<figure>                      <!-- this will repeat 12 times -->
-						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
-						<figcaption>
-				
-						</figcaption>
-					</figure>
-					
-					<figure>                      
-						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
-						<figcaption>
-				
-						</figcaption>
-					</figure>
-					
-					<figure>                      
-						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
-						<figcaption>
-				
-						</figcaption>
-					</figure>					
-					
-					<figure>                      
-						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
-						<figcaption>
-				
-						</figcaption>
-					</figure>
-					
-					<figure>                      
-						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
-						<figcaption>
-				
-						</figcaption>
-					</figure>
-					
-					<figure>                      
-						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
-						<figcaption>
-				
-						</figcaption>
-					</figure>
-					
-					<figure>                      
-						<img src="images/gregorian_-_masters_of_chant_1.png" alt="small one1">
-						<figcaption>
-				
-						</figcaption>
-					</figure>	
-									
-				</div>
-				
-			</section>	
-			
-			<div class="C-B"></div>
-		</main>
+		
+		
+		<script src="app/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
 		<script src="app/app.js"></script>
+		
 		<script src="app/Shared/Modules.js"></script>
+		
 		<script src="app/album/AlbumsFactory.js"></script>
 		<script src="app/album/AlbumsDirective.js"></script>
+		
+		<script src="app/genre/GenresFactory.js"></script>
+		<script src="app/genre/GenresDirective.js"></script>
+		
 	</body>
 </html>

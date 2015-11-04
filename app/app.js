@@ -1,24 +1,57 @@
-var app = angular.module('musicstore', ['Albums', 'ngRoute']);
+var app = angular.module('musicstore', ['Albums', 'Genres', 'ngRoute']);
 
- // app.config(['$routeProvider',
-        // function($routeProvider) {
-            // $routeProvider.
-                // when('/1', {
-                   // templateUrl: 'app/album/TEMP.html'
-                // })
+ app.config(['$routeProvider',
+        function($routeProvider) {
+            $routeProvider.
+                when('/genre/:genre', {
+                   templateUrl: 'app/genre/_genrepage.html',
+				   controller: 'MainController'
+                })
+				
+				. when('/', {
+                   templateUrl: 'app/album/_frontpage.html',
+				   controller: 'MainController'
+                })
               
-        // }]);
+              
+        }]);
 
 
-app.controller( 'MainController', function( $scope, $http, AlbumsService, $routeParams ) {
+app.controller( 'MainController', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
+	$scope.genre = $routeParams.genre;
 
-	$scope.getAlbums = function() {
 
-	AlbumsService.getAll()
-		.success( function( albums ) {
-			$scope.albums = albums;
-		});
-	};
+	$scope.getAlbumsByGenre = function() {
+		GenresService.getAlbumsByGenre($scope.genre)
+			.success( function( genres ) {
+				$scope.genresalbums = genres;
+			});
+		};
 	
+	$scope.getAlbumsByGenre();
+	
+	$scope.getAlbums = function() {
+		AlbumsService.getLatest()
+			.success( function( albums ) {
+				$scope.albums = albums;
+			});
+		};
+
 	$scope.getAlbums();
+	
+	$scope.getGenreList = function() {
+		GenresService.getList()
+			.success( function( genres ) {
+				$scope.genres = genres;
+			});
+		};
+
+	$scope.getGenreList();
+	
+	
+	$scope.pickGenre = function(genre){
+		$scope.selected_genre = genre;
+		
+	}
+	
 });

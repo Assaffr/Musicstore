@@ -33,6 +33,26 @@ class AlbumModel extends Model {
 			return null;
 		return $albums;
 	}
+	
+		public function getLatest18Albums() {
+		$result = $this->_database->query("
+					SELECT albums.album_id, albums.album_name, albums.album_artist, albums.album_duration, albums.album_release_year, albums.album_description, albums.album_long_description, albums.album_created, albums.album_price, images_to_albums.image_id, images.image_path 
+					FROM albums 
+					LEFT JOIN images_to_albums 
+					ON albums.album_id = images_to_albums.album_id 
+					LEFT JOIN images 
+					ON images_to_albums.image_id = images.image_id
+					ORDER BY albums.album_created 
+					DESC LIMIT 18
+				");
+		$albums = array();
+		while ($row = mysqli_fetch_assoc ($result) )
+			$albums[] = $row;
+		
+		if ( !$result )
+			return null;
+		return $albums;
+	}
 	public function getAlbumByID( $id ) {
 		$result = $this->_database->query("
 					SELECT * FROM `albums` WHERE `album_id` = ". $id ."
