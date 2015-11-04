@@ -5,6 +5,14 @@
 				</genres>
 
 			</aside>
-				{{genre}}
-				
-				{{genresalbums}}
+			
+				<div id="new-products">
+					<figure ng-repeat="album in genresalbums">
+						<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
+						<figcaption>
+							{{album.album_name}}
+							<br>
+							{{album.album_artist}}
+						</figcaption>
+					</figure>
+					</div>

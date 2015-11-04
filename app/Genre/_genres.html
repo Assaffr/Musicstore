@@ -1,5 +1,5 @@
 <nav>
 					<ul>
-						<a href="#/genre/{{genre.genre_name}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre == $index}">{{genre.genre_name}}</li></a>
+						<a href="#/genre/{{genre.genre_id}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre == $index}">{{genre.genre_name}}</li></a>
 					</ul>
 				</nav>

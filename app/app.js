@@ -5,7 +5,7 @@ var app = angular.module('musicstore', ['Albums', 'Genres', 'ngRoute']);
             $routeProvider.
                 when('/genre/:genre', {
                    templateUrl: 'app/genre/_genrepage.html',
-				   controller: 'MainController'
+				   controller: 'genrePage'
                 })
 				
 				. when('/', {
@@ -13,7 +13,12 @@ var app = angular.module('musicstore', ['Albums', 'Genres', 'ngRoute']);
 				   controller: 'MainController'
                 })
               
+			  	. when('index.html#', {
+                   templateUrl: 'app/album/_frontpage.html',
+				   controller: 'MainController'
+                })
               
+
         }]);
 
 
@@ -28,7 +33,6 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 			});
 		};
 	
-	$scope.getAlbumsByGenre();
 	
 	$scope.getAlbums = function() {
 		AlbumsService.getLatest()
@@ -47,11 +51,25 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 		};
 
 	$scope.getGenreList();
-	
+
 	
 	$scope.pickGenre = function(genre){
 		$scope.selected_genre = genre;
-		
 	}
 	
+});
+
+app.controller( 'genrePage', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
+	$scope.genre = $routeParams.genre;
+
+
+	$scope.getAlbumsByGenre = function() {
+		GenresService.getAlbumsByGenre($scope.genre)
+			.success( function( genres ) {
+				$scope.genresalbums = genres;
+			});
+		};
+	
+	
+	$scope.getAlbumsByGenre();
 });
