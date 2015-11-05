@@ -1,29 +1,19 @@
 var app = angular.module('musicstore', ['Albums', 'Genres', 'ngRoute']);
 
- app.config(['$routeProvider',
-        function($routeProvider) {
-            $routeProvider.
-                when('/genre/:genre', {
-                   templateUrl: 'app/genre/_genrepage.html',
-				   controller: 'genrePage'
-                })
-				
-				. when('/', {
-                   templateUrl: 'app/album/_frontpage.html',
-				   controller: 'MainController'
-                })
-              
-			  	. when('index.html#', {
-                   templateUrl: 'app/album/_frontpage.html',
-				   controller: 'MainController'
-                })
+ // app.config(['$routeProvider',
+        // function($routeProvider) {
+            // $routeProvider.
+                // when('/genre/:genre', {
+                   // templateUrl: '',
+				   // controller: ''
+                // })
               
 
-        }]);
+        // }]);
 
 
 app.controller( 'MainController', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
-	$scope.genre = $routeParams.genre;
+	// $scope.genre = $routeParams.genre;
 
 
 	$scope.getAlbumsByGenre = function() {

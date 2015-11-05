@@ -9,15 +9,99 @@
 	
 	<body ng-controller="MainController">
 
-			<topnav>
-			</topnav>
-			<topbar>
-			</topbar>
+				<header>
+				<div class="centerd top-nav">
+				 <nav>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">My Account</a></li>
+						<li><a href="#">My Wishlist</a></li>
+						<li><a href="#">Checkout</a></li>
+						<li><a href="#">Log In</a></li>
+					</ul>
+				</nav>	
+			</div>
+			</header>
+		<section id="top-bar">
+			<div class="centerd">
+				<a href="index.html"><h1>MUSIC</h1></a>
+				<input type="text" name="search" placeholder="Search">
+				<div id="cart_icon"><span>0</span></div>
+				<div id="welcome"><span>Welcome to our<br> online store!</span></div>
+				
+			</div>
+
+		</section>
 		
 		
-			<div ng-view></div>
+		<section id="top-bar-pics">
+			<figure ng-repeat="album in albums | limitTo: 9">
+			<a href="#/album/{{album.album_id}}">
+				<img ng-src="{{album.image_path}}" alt="{{album.album_name}}">
+				<figcaption>
+				{{album.album_name}}
+				<br>
+				{{album.album_artist}}
+				
+				</figcaption>
+				</a>
+			</figure>
+			
+			<div class="C-B"></div>
+		</section>
 		
+		<main class="centerd">
 		
+			<aside>
+				<nav>
+					<ul>
+						<a href="#/genre/{{genre.genre_id}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre == $index}">{{genre.genre_name}}</li></a>
+					</ul>
+				</nav>
+				
+				<div id="new-couple">
+				
+					<figure ng-repeat="album in albums | limitTo: 2 : 9">
+						<a href="#/album/{{album.album_id}}">
+						<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
+						<figcaption>
+							{{album.album_name}}
+							<br>
+							{{album.album_artist}}
+						</figcaption>
+					</figure>
+					</a>
+					
+				
+				</div>
+				
+			</aside>
+			
+			<section id="content">
+			
+				<div class="head-box">
+					<h3>New Products</h3>
+				</div>
+				
+				<div id="new-products">
+					<figure ng-repeat="album in albums | limitTo: 12 : 11">
+					<a href="#/album/{{album.album_id}}">
+						<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
+						<figcaption>
+							{{album.album_name}}
+							<br>
+							{{album.album_artist}}
+							<br>
+							{{album.album_price | currency}}
+						</figcaption>
+					</figure>	
+						</a>
+				</div>
+				
+			</section>	
+			
+			<div class="C-B"></div>
+		</main>
 		
 		<script src="app/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
