@@ -2,7 +2,6 @@
 <html ng-app="musicstore">
 	<head>
 		<link rel="stylesheet" href="style/main.css">
-		<link rel="stylesheet" type="text/css" href="style/flaticon.css"> 
 		<meta charset="utf-8">
 		<title>Musicstore</title>
 	</head>
@@ -12,7 +11,7 @@
 		<header>
 			<div class="centerd top-nav">
 				 <nav>
-					<ul>
+					<ul class="inline-list">
 						<li><a href="#">Home</a></li>
 						<li><a href="#">My Account</a></li>
 						<li><a href="#">My Wishlist</a></li>
@@ -35,21 +34,15 @@
 		</section>
 		
 		<div id="wrapper">
-			<section id="top-bar-pics">
-				<figure ng-repeat="album in albums | limitTo: 9">
-				<a href="#/album/{{album.album_id}}">
-					<img ng-src="{{album.image_path}}" alt="{{album.album_name}}">
-					<figcaption>
-					{{album.album_name}}
-					<br>
-					{{album.album_artist}}
-					
-					</figcaption>
-					</a>
-				</figure>
-				
-				<div class="C-B"></div>
-			</section>
+		
+			<div id="breadcrumb" class="centerd">
+				<ul class="inline-list">
+					<li><a href="index.html">Home</a></li>
+					<li class="located">Category</li>
+				</ul>
+			</div>
+			
+			
 			
 			<main class="centerd">
 			
@@ -60,28 +53,16 @@
 						</ul>
 					</nav>
 					
-					<div id="new-couple" class="full-caption">
-					
-						<figure ng-repeat="album in albums | limitTo: 2 : 9">
-							<a href="#/album/{{album.album_id}}">
-							<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
-							<figcaption>
-								{{album.album_name}}
-								<br>
-								{{album.album_artist}}
-							</figcaption>
-						</figure>
-						</a>
-						
-					
+					<div id="cart">
+
 					</div>
 					
 				</aside>
 				
-				<section id="content">
+				<section id="content" class="full-caption">
 				
 					<div class="head-box">
-						<h3>New Products</h3>
+						<h3>The neam of the category ({{somthing.length}} items)</h3>
 					</div>
 					
 					<div id="new-products">
@@ -103,7 +84,16 @@
 				
 				<div class="C-B"></div>
 			</main>
-		</div>
+			
+			
+		
+		</div><!-- end of wrapper -->
+		
+		
+		
+		
+		
+		
 		<script src="app/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
 		<script src="app/app.js"></script>

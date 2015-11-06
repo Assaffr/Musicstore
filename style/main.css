@@ -48,13 +48,13 @@ figure{
 	
 }
 
-header .centerd nav ul{
+ul.inline-list{
 	display:inline-block;
 	padding:0px;
 	margin:0px;
 }
 
-header .centerd nav ul li{
+header .centerd nav ul li, #breadcrumb ul li{
 	display:inline-block;
 	list-style-type: none;
 	padding: 0px 20px 0 0;
@@ -64,8 +64,14 @@ a {
 
     color: #000;
     text-decoration: none;
-    font-size:15px;
+
 }
+
+header a{
+	font-size:15px;
+	
+}
+
 
 #top-bar{
 	height:80px;
@@ -246,7 +252,6 @@ main aside ul li{
 
 section#content figure{
 	float:left;
-	height:275px;
 	width:200px;
 	margin:0 21px 22px 0;
 	
@@ -274,15 +279,45 @@ section#content figcaption{
 }
 
 #new-couple figcaption{
+	background-color:#fb0002;
+}
+
+.full-caption figcaption{
 	color: white;
 	width:200px;
-	height:150px;
+	height:150px !important;
 	margin-top:-4px;
-	background-color:#fb0002;
+	
 }
 
 #new-couple figure:nth-child(1){
 	margin:22px 0;
 }
 
+#breadcrumb{
+	background-color:#fff;
+	margin-top:37px;
+	margin-bottom:23px;
+	height:14px;
+	padding: 7px 0;
+	font-size:12px;
+}
+
+#breadcrumb li{
+	padding:0 0 0 10px !important;
+}
+
+#breadcrumb li::after { 
+    content: " >";
+    margin-left:7px;
+}
+
+#breadcrumb li.located{
+	color:#A4A4A4;
+}
+
+#breadcrumb li.located::after{
+	content:"";
+	
+}
 
