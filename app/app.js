@@ -44,7 +44,10 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 
 	
 	$scope.pickGenre = function(genre){
-		$scope.selected_genre = genre;
+		$scope.selected_genre = {
+			genre_id : genre,
+			genre_name : $scope.genres[genre]["genre_name"]
+		};
 	}
 	
 });
