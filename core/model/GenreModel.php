@@ -8,9 +8,12 @@ class GenreModel extends Model {
 	
 	//DOES QUERY, RETURNS RESULT OR NULL
 	
-	public function getAllGenres() {
+	public function getGenresWithSubCount() {
 		$result = $this->_database->query("
-					SELECT * FROM `genres`
+					SELECT  genre.genre_id, genre.genre_name,
+					(SELECT count(*) FROM genres WHERE genre_parent_id = genre.genre_id ) AS childcount
+					FROM genres genre
+					WHERE genre.genre_parent_id = 0
 				");
 		$genres = array();
 		while ($row = mysqli_fetch_assoc ($result) )
@@ -20,6 +23,7 @@ class GenreModel extends Model {
 			return null;
 		return $genres;
 	}
+	
 	
 	public function getAlbumByGenre( $id ) {
 		$result = $this->_database->query("

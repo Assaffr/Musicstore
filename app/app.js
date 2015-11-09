@@ -41,7 +41,11 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 		};
 
 	$scope.getGenreList();
-
+	
+	$scope.checkSubGenre = function(genre){
+		if ($scope.genres[genre].childcount != 0)
+			return true
+	}
 	
 	$scope.pickGenre = function(genre){
 		$scope.selected_genre = {
@@ -50,19 +54,21 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 		};
 	}
 	
+
 });
 
 app.controller( 'genrePage', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
 	$scope.genre = $routeParams.genre;
 
-
 	$scope.getAlbumsByGenre = function() {
-		GenresService.getAlbumsByGenre($scope.genre)
+		GenresService.getAlbumsByGenre($scope.selected_genre.genre_id)
 			.success( function( genres ) {
 				$scope.genresalbums = genres;
 			});
 		};
 	
-	
+	console.log($scope.genresalbums);
 	$scope.getAlbumsByGenre();
+	
+	
 });

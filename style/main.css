@@ -353,14 +353,13 @@ section#content figcaption{
 
 .icon{
 	float:right;
-	height:30px;
-	width:38px;
+	height:20px;
+	width:20px;
 	filter: brightness(50%);
 	-webkit-filter: brightness(150%);
 	-moz-filter: brightness(50%);
 	-o-filter: brightness(50%);
 	-ms-filter: brightness(50%);
-	background-color:#fff;
 
 }
 

@@ -49,7 +49,7 @@
 				<aside>
 					<nav>
 						<ul>
-							<a href="#/genre/{{genre.genre_id}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre.genre_id == $index}">{{genre.genre_name}}</li></a>
+							<a href="#/genre/{{genre.genre_id}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre.genre_id == $index}">{{genre.genre_name}} <img  class="icon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img></li></a>
 						</ul>
 					</nav>
 					
