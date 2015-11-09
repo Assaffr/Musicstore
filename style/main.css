@@ -235,8 +235,8 @@ main aside ul li{
 	
 }
 
-#content .head-box{
-	width:623px;
+.head-box{
+
 	height:22px;
 	margin-bottom:22px;
 	background-color:#fff;
@@ -244,9 +244,18 @@ main aside ul li{
 	
 }
 
-#content .head-box h3{
+#content .head-box{
+	width:623px;
+}
+
+.head-box h3{
 	margin:0;
 	font-weight:normal;
+	
+}
+
+aside .head-box{
+	margin:22px 0;
 	
 }
 
@@ -265,7 +274,8 @@ main figure img{
 
 section#content figcaption{
 	color: white;
-	width:200px;
+	padding:5px;
+	width:190px;
 	height:75px;
 	background-color:#000;
 	margin-top:-4px
@@ -284,8 +294,8 @@ section#content figcaption{
 
 .full-caption figcaption{
 	color: white;
-	width:200px;
-	height:150px !important;
+	width:190px;
+	height:130px !important;
 	margin-top:-4px;
 	
 }
@@ -297,7 +307,7 @@ section#content figcaption{
 #breadcrumb{
 	background-color:#fff;
 	margin-top:37px;
-	margin-bottom:23px;
+	margin-bottom:22px;
 	height:14px;
 	padding: 7px 0;
 	font-size:12px;
@@ -320,4 +330,77 @@ section#content figcaption{
 	content:"";
 	
 }
+#album-fullname{
+	font-size:85%;
+	
+}
+
+#album-description{
+	font-size:75%;
+	color:#D8D8D8;
+	
+}
+
+#price{
+	font-size:150%;
+	color:#F10016;
+}
+
+#atw{
+	font-size:65%;
+	color:#D8D8D8;
+}
+
+.icon{
+	float:right;
+	height:30px;
+	width:38px;
+	filter: brightness(50%);
+	-webkit-filter: brightness(150%);
+	-moz-filter: brightness(50%);
+	-o-filter: brightness(50%);
+	-ms-filter: brightness(50%);
+	background-color:#fff;
+
+}
+
+#cart p {
+	float:left;
+	font-size:65%;
+	color:#A4A4A4;
+}
+
+#cart p span{
+	color:#000;
+	
+}
+
+#cart hr{
+	border: 0;
+  	width: 100%;
+	color:#D8D8D8;
+	background-color:#D8D8D8;
+	height: 1px;
+	
+}
+
+#cart p:nth-child(3){
+	font-weight: bold;
+}
+
+#cart button{
+	float:right;
+	padding:8px 10px;
+	background-color:#000;
+	color:#fff;
+	border:none;
+	font-size:70%;
+	margin-bottom:8px;
+}
+
+#cart h6{
+	margin-top:10px;
+	
+}
+
 

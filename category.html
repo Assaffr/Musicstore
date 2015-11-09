@@ -54,7 +54,26 @@
 					</nav>
 					
 					<div id="cart">
-
+						<div class="head-box"><h3>My cart</h3></div>
+						<p ng-show="fulse">You have no items in your shopping cart.</p>
+						
+						<div ng-show="true" id="cart-content">
+						
+							<p>There are <span><!-- {{somthing.length}} -->2 items</span> in your cart</p>
+							
+							<hr>
+							
+							<p>Cart subtotal: <span>86.23$</span></p>
+							
+							<a href="#"><button>Checkout</button></a>
+							
+							<hr>
+							
+							<h6>RECENTLY ADDED ITEM(S)</h6>
+							<div class="cart-prod">
+							
+							</div>
+						</div>
 					</div>
 					
 				</aside>
@@ -69,15 +88,20 @@
 						<figure ng-repeat="album in albums | limitTo: 12 : 11">
 						<a href="#/album/{{album.album_id}}">
 							<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
+							</a>
 							<figcaption>
-								{{album.album_name}}
+								<sapn id="album-fullname">{{album.album_artist}} - {{album.album_name}}</sapn>
 								<br>
-								{{album.album_artist}}
+								<span id="album-description">{{album.description | limitTo:45}}...</span>
 								<br>
-								{{album.album_price | currency}}
+								<span id="price">{{album.album_price | currency}}</span>
+								<img class="icon" src="Images\shopping69.png">
+								<img class="icon" src="Images\information35.png">
+								<br>
+								<span id="atw">Add to wishlist</span>
 							</figcaption>
 						</figure>	
-							</a>
+							
 					</div>
 					
 				</section>	
