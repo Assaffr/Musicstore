@@ -36,6 +36,15 @@ class AlbumController extends Controller {
 		return $albums;
 	}
 	
+	public function getAlbumImages( $id ) {
+		$albums = $this->model->getAlbumImages( $id );
+		
+		if ( !$albums )
+			return null;
+		
+		return $albums;
+	}	
+	
 	public function getAlbumByID( $id ) {
 		$albums = $this->model->getAlbumByID( $id );
 		

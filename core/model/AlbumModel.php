@@ -42,6 +42,7 @@ class AlbumModel extends Model {
 					ON albums.album_id = images_to_albums.album_id 
 					LEFT JOIN images 
 					ON images_to_albums.image_id = images.image_id
+					WHERE images.image_title = 'Cover Art'
 					ORDER BY albums.album_created 
 					DESC LIMIT 18
 				");
@@ -65,6 +66,22 @@ class AlbumModel extends Model {
 			return null;
 		return $albums;
 	}		
+	
+	public function getAlbumImages( $id ) {
+	$result = $this->_database->query("
+				SELECT images_to_albums.image_id, images.image_path FROM images_to_albums
+				LEFT JOIN images 
+				ON images_to_albums.image_id = images.image_id
+				WHERE images_to_albums.album_id =". $id ."
+			");
+	$albums = array();
+	while ($row = mysqli_fetch_assoc ($result) )
+		$albums[] = $row;
+	
+	if ( !$result )
+		return null;
+	return $albums;
+}	
 	
 	
 	public function deleteAlbum( $id ) {

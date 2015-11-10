@@ -23,6 +23,12 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 			});
 		};
 	
+	$scope.getAlbumImages = function() {
+		GenresService.getAlbumsByGenre($scope.genre)
+			.success( function( genres ) {
+				$scope.genresalbums = genres;
+			});
+		};
 	
 	$scope.getAlbums = function() {
 		AlbumsService.getLatest()

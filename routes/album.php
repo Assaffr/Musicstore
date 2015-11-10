@@ -21,6 +21,12 @@ $app->get('/album/:id', function( $id ) use ($album){
 	echo json_encode( $album );
 });
 
+$app->get('/album/images/:id', function( $id ) use ($album){
+	$album = $album->getAlbumImages( $id );
+	
+	echo json_encode( $album );
+});
+
 //search album
 $app->get('/search/:data', function( $data ) use ($album){
 	$album = $album->searchAlbum( $data );
