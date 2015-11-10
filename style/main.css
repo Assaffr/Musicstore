@@ -31,7 +31,7 @@ figure{
 }
 
 .centerd{
-	max-width:865px;
+	width:865px;
 	height:inherit ; 
 	margin: 0 auto;
 
@@ -402,4 +402,32 @@ section#content figcaption{
 	
 }
 
+#edit-delete-album{
+	margin-bottom:8px;
+}
 
+#edit-delete-album img{
+	cursor: pointer;
+	height:16px;
+	width:24px;
+	float:right;
+}
+
+.cart-album-cover{
+	height:66px;
+	width:64px;
+	
+}
+
+.album-info{
+	width:128px;
+	height:62px;
+	padding-left:7px;
+	padding-top:4px;
+	float:right;
+}
+
+.album-info span{
+	font-size:70%;
+
+}
