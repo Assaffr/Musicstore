@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2015 at 09:39 PM
+-- Generation Time: Nov 13, 2015 at 12:59 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -256,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `image_path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `image_title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`image_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=134 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=170 ;
 
 --
 -- Dumping data for table `images`
@@ -395,7 +395,43 @@ INSERT INTO `images` (`image_id`, `image_path`, `image_title`) VALUES
 (130, '..\\Musicstore\\CoverArt\\bethlate4.jpg', 'Late String Quartets'),
 (131, '..\\Musicstore\\CoverArt\\chopinetc2.jpg', 'Sonata No. 3 etc'),
 (132, '..\\Musicstore\\CoverArt\\chopinetc3.jpg', 'Sonata No. 3 etc'),
-(133, '..\\Musicstore\\CoverArt\\chopinetc4.jpg', 'Sonata No. 3 etc');
+(133, '..\\Musicstore\\CoverArt\\chopinetc4.jpg', 'Sonata No. 3 etc'),
+(134, '..\\Musicstore\\CoverArt\\mozartcomplete2.jpg', 'Complete Piano Concertos'),
+(135, '..\\Musicstore\\CoverArt\\mozartcomplete3.jpg', 'Complete Piano Concertos'),
+(136, '..\\Musicstore\\CoverArt\\mozartcomplete4.jpg', 'Complete Piano Concertos'),
+(137, '..\\Musicstore\\CoverArt\\folsomprison2.jpg', 'Johnny Cash At Folsom Prison'),
+(138, '..\\Musicstore\\CoverArt\\folsomprison3.jpg', 'Johnny Cash At Folsom Prison'),
+(139, '..\\Musicstore\\CoverArt\\folsomprison4.jpg', 'Johnny Cash At Folsom Prison'),
+(140, '..\\Musicstore\\CoverArt\\gunfighter2.jpg', 'Gunfighter Ballads and Trail Songs'),
+(141, '..\\Musicstore\\CoverArt\\gunfighter3.jpg', 'Gunfighter Ballads and Trail Songs'),
+(142, '..\\Musicstore\\CoverArt\\gunfighter4.jpg', 'Gunfighter Ballads and Trail Songs'),
+(143, '..\\Musicstore\\CoverArt\\nofences2.jpg', 'No Fences'),
+(144, '..\\Musicstore\\CoverArt\\nofences3.jpg', 'No Fences'),
+(145, '..\\Musicstore\\CoverArt\\nofences4.jpg', 'No Fences'),
+(146, '..\\Musicstore\\CoverArt\\peoplertalking2.jpg', 'All the People Are Talkin'),
+(147, '..\\Musicstore\\CoverArt\\peoplertalking3.jpg', 'All the People Are Talkin'),
+(148, '..\\Musicstore\\CoverArt\\peoplertalking4.jpg', 'All the People Are Talkin'),
+(149, '..\\Musicstore\\CoverArt\\lylelovett2.jpg', 'Lyle Lovett'),
+(150, '..\\Musicstore\\CoverArt\\lylelovett3.jpg', 'Lyle Lovett'),
+(151, '..\\Musicstore\\CoverArt\\lylelovett4.jpg', 'Lyle Lovett'),
+(152, '..\\Musicstore\\CoverArt\\americansaturdaynight2.jpg', 'American Saturday Night'),
+(153, '..\\Musicstore\\CoverArt\\americansaturdaynight3.jpg', 'American Saturday Night'),
+(154, '..\\Musicstore\\CoverArt\\americansaturdaynight4.jpg', 'American Saturday Night'),
+(155, '..\\Musicstore\\CoverArt\\MilesDavisKindofBlue2.jpg', 'Kind of Blue'),
+(156, '..\\Musicstore\\CoverArt\\MilesDavisKindofBlue3.jpg', 'Kind of Blue'),
+(157, '..\\Musicstore\\CoverArt\\MilesDavisKindofBlue4.jpg', 'Kind of Blue'),
+(158, '..\\Musicstore\\CoverArt\\alovesupreme2.jpg', 'A Love Supreme'),
+(159, '..\\Musicstore\\CoverArt\\alovesupreme3.jpg', 'A Love Supreme'),
+(160, '..\\Musicstore\\CoverArt\\alovesupreme4.jpg', 'A Love Supreme'),
+(161, '..\\Musicstore\\CoverArt\\timeout2.jpg', 'Time Out'),
+(162, '..\\Musicstore\\CoverArt\\timeout3.jpg', 'Time Out'),
+(163, '..\\Musicstore\\CoverArt\\timeout4.jpg', 'Time Out'),
+(164, '..\\Musicstore\\CoverArt\\mingusahhum2.jpg', 'Mingus Ah Um'),
+(165, '..\\Musicstore\\CoverArt\\mingusahhum3.jpg', 'Mingus Ah Um'),
+(166, '..\\Musicstore\\CoverArt\\mingusahhum4.jpg', 'Mingus Ah Um'),
+(167, '..\\Musicstore\\CoverArt\\shapeofjazz2.jpg', 'The Shape of Jazz to Come'),
+(168, '..\\Musicstore\\CoverArt\\shapeofjazz3.jpg', 'The Shape of Jazz to Come'),
+(169, '..\\Musicstore\\CoverArt\\shapeofjazz4.jpg', 'The Shape of Jazz to Come');
 
 -- --------------------------------------------------------
 
@@ -512,17 +548,53 @@ INSERT INTO `images_to_albums` (`image_id`, `album_id`) VALUES
 (132, 24),
 (133, 24),
 (25, 25),
+(134, 25),
+(135, 25),
+(136, 25),
 (26, 26),
+(137, 26),
+(138, 26),
+(139, 26),
 (27, 27),
+(140, 27),
+(141, 27),
+(142, 27),
 (28, 28),
+(143, 28),
+(144, 28),
+(145, 28),
 (29, 29),
+(146, 29),
+(147, 29),
+(148, 29),
 (30, 30),
+(149, 30),
+(150, 30),
+(151, 30),
 (31, 31),
+(152, 31),
+(153, 31),
+(154, 31),
 (32, 32),
+(155, 32),
+(156, 32),
+(157, 32),
 (33, 33),
+(158, 33),
+(159, 33),
+(160, 33),
 (34, 34),
+(161, 34),
+(162, 34),
+(163, 34),
 (35, 35),
+(165, 35),
+(166, 35),
+(167, 35),
 (36, 36),
+(168, 36),
+(169, 36),
+(170, 36),
 (37, 37),
 (38, 38),
 (39, 39),
