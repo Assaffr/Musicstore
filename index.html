@@ -36,7 +36,7 @@
 		<div id="wrapper">
 			<section id="top-bar-pics">
 				<figure ng-repeat="album in albums | limitTo: 9">
-				<a href="product.html#/{{album.album_id}}">
+				<a href="product.html#/album/{{album.album_id}}">
 					<img ng-src="{{album.image_path}}" alt="{{album.album_name}}">
 					<figcaption>
 					{{album.album_name}}
@@ -54,15 +54,15 @@
 			
 				<aside>
 					<nav>
-						<ul>
-							<a href="category.html#/{{genre.genre_name}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre == $index}">{{genre.genre_name}}</li></a>
+						<ul ng-controller="genrePage">
+							<a href="category.html#/category/{{genre.genre_name}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre == $index}">{{genre.genre_name}}</li></a>
 						</ul>
 					</nav>
 					
 					<div id="new-couple" class="full-caption">
 					
 						<figure ng-repeat="album in albums | limitTo: 2 : 9">
-							<a href="product.html#/{{album.album_id}}">
+							<a href="product.html#/album/{{album.album_id}}">
 							<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
 							<figcaption>
 								{{album.album_name}}
@@ -85,7 +85,7 @@
 					
 					<div id="new-products">
 						<figure ng-repeat="album in albums | limitTo: 12 : 11">
-						<a href="product.html#/{{album.album_id}}">
+						<a href="product.html#/album/{{album.album_id}}">
 							<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
 							<figcaption>
 								{{album.album_name}}

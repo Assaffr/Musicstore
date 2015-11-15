@@ -42,7 +42,7 @@ class AlbumModel extends Model {
 					ON albums.album_id = images_to_albums.album_id 
 					LEFT JOIN images 
 					ON images_to_albums.image_id = images.image_id
-					WHERE images.image_title = 'Cover Art'
+					GROUP BY albums.album_id
 					ORDER BY albums.album_created 
 					DESC LIMIT 18
 				");

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2015 at 12:59 AM
+-- Generation Time: Nov 15, 2015 at 09:01 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `albums` (
   `album_created` timestamp NOT NULL,
   `album_price` double DEFAULT NULL,
   PRIMARY KEY (`album_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=62 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=67 ;
 
 --
 -- Dumping data for table `albums`
@@ -104,7 +104,12 @@ INSERT INTO `albums` (`album_id`, `album_name`, `album_artist`, `album_duration`
 (58, 'Bangarang', 'Skrillex', '30:08', '2011', 'Bangarang is the fifth EP by American electronic music producer Skrillex. It was released on December 23, 2011 exclusively via Beatport while being released on other digital retailers on December 27, 2011.', 'Bangarang received mixed reviews from music critics. The EP was a commercial success upon release, charting within Australia, Canada, New Zealand, Norway, Switzerland, the United Kingdom and the United States. Its lead single, Bangarang, charted in multiple countries worldwide and reached the top ten in Australia and Belgium. Due to strong digital sales following the EP''s release, Kyoto and Breakn'' a Sweat charted in multiple countries as well. Breakn'' a Sweat was featured in the 2012 documentary film Re:Generation.', '2015-11-05 16:42:17', 2.1),
 (59, 'London Zoo', 'The Bug', '45:30', '2008', 'London Zoo is the third album by the English artist Kevin Martin under his alias of The Bug. It was released in 2008 by Ninja Tune Records. The album was released to widespread critical acclaim.', 'Kevin Martin, under a dozen-or-so aliases and across numerous genres, has been screwing around with deep bass for well over a decade. 1997''s Tapping the Conversation-- a concept album conceived as a surrogate soundtrack to Francis Ford Coppola''s The Conversation-- was his first release as the Bug, and in retrospect, it sounds like an alternate-universe prototype of dubstep, based on instrumental hip-hop rather than UK garage rhythms. By the time he issued his 2003 follow-up Pressure, he''d already charged headlong into heavy digital ragga, building a repertoire of grimy, distorted beats that mutated dancehall into a glitchy, blown-out commotion.', '2015-11-05 16:43:17', 6.8),
 (60, 'My Demons', 'Distance', '41:01', '2007', 'My Demons is the debut album by dubstep producer Distance. It was released in 2007 on Ziq''s Planet Mu records.', 'Planet Mu are proud to present the debut album from Bromley''s Distance. Rinse 100.3 FM''s DJ Distance first came to prominence on Sting records with tracks like Breathing Space, Shiverz & Tropical Rub. After having recorded for Boka, Hotflush and Tempa, he moved over to Planet Mu for the massive 12 featuring the anthems Traffic & Cyclops. His new album My Demons is another leap ahead into uncharted dubstep territory.', '2015-11-05 16:47:25', 7.9),
-(61, 'Oneiric', 'Boxcutter', '92:10', '2006', 'Oneiric is the debut album by electronic musician Boxcutter (Barry Lynn). The word oneiric means of or pertaining to dreams; resembling a dream, dreamlike.', 'This release established Boxcutter''s experimental breaks and bass-driven style of music, which at first appraisal was labeled as dubstep because of its similar 2-step rhythms and warped basslines. However, comparisons were also drawn to IDM[2] in that most tracks featured heavy use of effects and processed samples of live instrumentation. Tauhid, for instance, begins with a distorted flute sample that intercuts throughout the track, while Sunshine V.I.P. features choppy, rapid-fire beat sequencing sourced from live drums in addition to a flute melody.', '2015-11-05 16:45:01', 20.1);
+(61, 'Oneiric', 'Boxcutter', '92:10', '2006', 'Oneiric is the debut album by electronic musician Boxcutter (Barry Lynn). The word oneiric means of or pertaining to dreams; resembling a dream, dreamlike.', 'This release established Boxcutter''s experimental breaks and bass-driven style of music, which at first appraisal was labeled as dubstep because of its similar 2-step rhythms and warped basslines. However, comparisons were also drawn to IDM[2] in that most tracks featured heavy use of effects and processed samples of live instrumentation. Tauhid, for instance, begins with a distorted flute sample that intercuts throughout the track, while Sunshine V.I.P. features choppy, rapid-fire beat sequencing sourced from live drums in addition to a flute melody.', '2015-11-05 16:45:01', 20.1),
+(62, 'The Fame Monster', 'Lady Gaga', '84:28', '2009', 'The Fame Monster is a reissue of American singer Lady Gaga''s debut studio album, The Fame (2008), and was released on November 18, 2009, through Interscope Records.', 'The Fame Monster is a reissue of American singer Lady Gaga''s debut studio album, The Fame (2008), and was released on November 18, 2009, through Interscope Records. Initially planned solely as a deluxe reissue of The Fame, it was later decided that the release''s eight new tracks would also be released as a standalone EP in some territories, as Gaga thought the re-release was too expensive and that the albums were each conceptually different, describing them as yin and yang. A super deluxe edition of The Fame Monster including The Fame and additional merchandise, including a lock of her wig, was released on December 15, 2009.', '2015-11-15 19:19:27', 9.3),
+(63, 'Blackout', 'Britney Spears', '43:37', '2007', 'Blackout is the fifth studio album by American recording artist Britney Spears. It was released on October 25, 2007, by Jive Records and the Zomba Music Group.', 'Blackout is the fifth studio album by American recording artist Britney Spears. It was released on October 25, 2007, by Jive Records and the Zomba Music Group. Opting to re-establish her music career after her fourth studio album, In the Zone (2003), she began planning the project in 2006. Work continued into 2007, during which time Spears'' much-publicized personal struggles, including several instances of erratic behavior and her divorce from Kevin Federline, overshadowed her professional endeavors.', '2015-11-15 19:26:28', 10.8),
+(64, 'Halcyon', 'Ellie Goulding', '46:54', '2012', 'Halcyon is the second studio album by English singer and songwriter Ellie Goulding, released on 5 October 2012 by Polydor Records.', 'Halcyon is the second studio album by English singer and songwriter Ellie Goulding, released on 5 October 2012 by Polydor Records. It was recorded between 2011 and 2012, during promotion of her debut album, Lights (2010). Goulding worked with several producers on the album, including Jim Eliot, Starsmith, Billboard, Justin Parker, MONSTA, Madeon and Mike Spencer, in addition to collaborating with artists such as Tinie Tempah and Calvin Harris.', '2015-11-15 19:31:40', 10.8),
+(65, 'Out of Control', 'Girls Aloud', '53:09', '2008', 'Out of Control is the fifth and final studio album by British girl group Girls Aloud, released in the United Kingdom on 3 November 2008 by Fascination Records.', 'Out of Control is the fifth and final studio album by British girl group Girls Aloud, released in the United Kingdom on 3 November 2008 by Fascination Records. Like their previous albums, it was crafted by the production team of Brian Higgins and Xenomania. Out of Control builds on the sound of Girls Aloud''s previous albums and represents a move into the mainstream for the group.', '2015-11-15 19:36:14', 9.9),
+(66, 'Art Angels', 'Grimes', '49:37', '2015', 'Art Angels is the fourth studio album by Canadian singer and producer Claire Boucher, professionally known as Grimes.', 'Art Angels is the fourth studio album by Canadian singer and producer Claire Boucher, professionally known as Grimes. It was digitally released on November 6, 2015 via 4AD, and will be physically released on December 11, 2015. Boucher began planning the record in 2013 as the follow-up to her third studio album Visions. Due to her dissatisfaction with the material, in 2014 she started over and scrapped most of the original material she had recorded for the album.', '2015-11-15 19:40:52', 12.8);
 
 -- --------------------------------------------------------
 
@@ -213,6 +218,11 @@ INSERT INTO `genres_to_albums` (`album_id`, `genre_id`) VALUES
 (29, 5),
 (30, 5),
 (31, 5),
+(62, 6),
+(63, 6),
+(64, 6),
+(65, 6),
+(66, 6),
 (1, 7),
 (2, 7),
 (3, 7),
@@ -256,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   `image_path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `image_title` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`image_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=170 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=190 ;
 
 --
 -- Dumping data for table `images`
@@ -431,7 +441,27 @@ INSERT INTO `images` (`image_id`, `image_path`, `image_title`) VALUES
 (166, '..\\Musicstore\\CoverArt\\mingusahhum4.jpg', 'Mingus Ah Um'),
 (167, '..\\Musicstore\\CoverArt\\shapeofjazz2.jpg', 'The Shape of Jazz to Come'),
 (168, '..\\Musicstore\\CoverArt\\shapeofjazz3.jpg', 'The Shape of Jazz to Come'),
-(169, '..\\Musicstore\\CoverArt\\shapeofjazz4.jpg', 'The Shape of Jazz to Come');
+(169, '..\\Musicstore\\CoverArt\\shapeofjazz4.jpg', 'The Shape of Jazz to Come'),
+(170, '..\\Musicstore\\CoverArt\\thefamemonster.jpg', 'Cover Art'),
+(171, '..\\Musicstore\\CoverArt\\thefamemonster2.jpg', 'The Fame Monster'),
+(172, '..\\Musicstore\\CoverArt\\thefamemonster3.jpg', 'The Fame Monster'),
+(173, '..\\Musicstore\\CoverArt\\thefamemonster4.jpg', 'The Fame Monster'),
+(174, '..\\Musicstore\\CoverArt\\blackout.jpg', 'Cover Art'),
+(175, '..\\Musicstore\\CoverArt\\blackout2.jpg', 'Blackout'),
+(176, '..\\Musicstore\\CoverArt\\blackout3.jpg', 'Blackout'),
+(177, '..\\Musicstore\\CoverArt\\blackout4.jpg', 'Blackout'),
+(178, '..\\Musicstore\\CoverArt\\halcyon.jpg', 'Cover Art'),
+(179, '..\\Musicstore\\CoverArt\\halcyon2.jpg', 'Halcyon'),
+(180, '..\\Musicstore\\CoverArt\\halcyon3.jpg', 'Halcyon'),
+(181, '..\\Musicstore\\CoverArt\\halcyon4.jpg', 'Halcyon'),
+(182, '..\\Musicstore\\CoverArt\\outofcontrol.jpg', 'Cover Art'),
+(183, '..\\Musicstore\\CoverArt\\outofcontrol2.jpg', 'Out of Control'),
+(184, '..\\Musicstore\\CoverArt\\outofcontrol3.jpg', 'Out of Control'),
+(185, '..\\Musicstore\\CoverArt\\outofcontrol4.jpg', 'Out of Control'),
+(186, '..\\Musicstore\\CoverArt\\artangels.jpg', 'Cover Art'),
+(187, '..\\Musicstore\\CoverArt\\artangels2.jpg', 'Art Angels'),
+(188, '..\\Musicstore\\CoverArt\\artangels3.jpg', 'Art Angels'),
+(189, '..\\Musicstore\\CoverArt\\artangels4.jpg', 'Art Angels');
 
 -- --------------------------------------------------------
 
@@ -588,13 +618,13 @@ INSERT INTO `images_to_albums` (`image_id`, `album_id`) VALUES
 (162, 34),
 (163, 34),
 (35, 35),
+(164, 35),
 (165, 35),
 (166, 35),
-(167, 35),
 (36, 36),
+(167, 36),
 (168, 36),
 (169, 36),
-(170, 36),
 (37, 37),
 (38, 38),
 (39, 39),
@@ -619,7 +649,27 @@ INSERT INTO `images_to_albums` (`image_id`, `album_id`) VALUES
 (58, 58),
 (59, 59),
 (60, 60),
-(61, 61);
+(61, 61),
+(170, 62),
+(171, 62),
+(172, 62),
+(173, 62),
+(174, 63),
+(175, 63),
+(176, 63),
+(177, 63),
+(178, 64),
+(179, 64),
+(180, 64),
+(181, 64),
+(182, 65),
+(183, 65),
+(184, 65),
+(185, 65),
+(186, 66),
+(187, 66),
+(188, 66),
+(189, 66);
 
 -- --------------------------------------------------------
 

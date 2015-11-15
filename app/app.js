@@ -19,7 +19,6 @@ var app = angular.module('musicstore', ['Albums', 'Genres', 'ngRoute']);
 
 
 app.controller( 'MainController', function( $scope, $http, AlbumsService, GenresService, $routeParams, $location ) {
-	$scope.genre = $routeParams.genre;
 
 	$scope.getAlbumsByGenre = function() {
 		GenresService.getAlbumsByGenre($scope.genre)
@@ -44,7 +43,15 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 
 	$scope.getAlbums();
 	
-	$scope.getGenreList = function() {
+
+
+});
+
+app.controller( 'genrePage', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
+	$scope.genre = $routeParams.genre;
+	$scope.current_genre = $routeParams.genre;
+	
+		$scope.getGenreList = function() {
 		GenresService.getList()
 			.success( function( genres ) {
 				$scope.genres = genres;
@@ -65,11 +72,6 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 		};
 	}
 	
-
-});
-
-app.controller( 'genrePage', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
-	$scope.genre = $routeParams.genre;
 	
 	$scope.getGenreIDFromName = function() {
 		GenresService.turnNameToID($scope.genre)
