@@ -341,7 +341,7 @@ section#content figcaption{
 	
 }
 
-#price{
+.price{
 	font-size:150%;
 	color:#F10016;
 }
@@ -387,13 +387,13 @@ section#content figcaption{
 	font-weight: bold;
 }
 
-#cart button{
+button{
 	float:right;
 	padding:8px 10px;
 	background-color:#000;
 	color:#fff;
 	border:none;
-	font-size:70%;
+	font-size:10px;
 	margin-bottom:8px;
 }
 
@@ -430,4 +430,154 @@ section#content figcaption{
 .album-info span{
 	font-size:70%;
 
+}
+
+
+
+#images{
+	width:230px;
+	float:left;
+	text-align:center;
+	margin-right:22px;
+}
+
+#full-size-image{
+	background-image: url('/../Musicstore/CoverArt/inutero.jpg');
+	background-repeat: no-repeat;
+	background-size:100%;
+	width:230px;
+	height:230px;
+
+	
+}
+
+#images img{
+	width:70px;
+	height:70px;
+	
+}
+
+#album-images img:nth-child(3n+2){
+	margin: 0 5px;
+	
+}
+
+.product-page{
+	margin-bottom:22px;
+	
+}
+
+.product-page article{
+	float:left;
+	width:390px;
+}
+
+.product-page article h2{
+	
+	color:#858584;
+	margin:0;
+	font-size:95%;
+}
+
+.product-page article #product-head p {
+	font-size:70%;
+	
+}
+
+.In-stock{
+	color:#04B431;
+	
+}
+
+.out-of-stock{
+	color:#DF0101;
+	
+}
+
+#product-head{
+	border-bottom:1px solid #D8D8D8; 
+	margin-bottom:6px;
+}
+
+.stock{
+	display:block;
+	color:#858584;
+	font-size:70%;
+	margin-bottom:6px;
+	
+}
+
+.full-description{
+	font-size:60%;
+	color:#858584;
+	
+}
+
+#add-to-cart-box{
+	background-color:#FAFAFA;
+	width:354px;
+	height:94px;
+	padding:18px;
+}
+
+#add-to-cart-box .price{
+	font-size:90%;
+}
+
+#add-to-cart-box #qty-box{
+	margin-top:10px;
+	height:23px;
+	padding:10px 0;
+	border-top:1px solid #D8D8D8;
+	border-bottom:1px solid #D8D8D8;
+	font-size:60%;
+	color:#858584;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    cursor:pointer;
+    display:none;
+    width:8px;
+    color: #333;
+    text-align:center;
+    position:relative;
+}
+
+input[type=number]{
+	width:28px;
+	height:26px;
+	outline: 0;
+	border:1px solid #D8D8D8;
+	text-align:center;
+}
+
+.qty{
+	width:12px;
+	height:12px;
+	border:1px solid #D8D8D8;
+	text-align:center;
+	color:#858584;
+	font-size:110%;
+	margin:2px;
+	cursor:pointer;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	
+}
+
+#input-wrapper{
+	
+	float:left;
+}
+
+#qty-mini-box{
+	float:left;
+	position:relative;
+	bottom:2px;
+	
 }

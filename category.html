@@ -111,32 +111,33 @@
 					
 				</aside>
 				
-				<section id="content" class="full-caption">
-				
-					<div class="head-box">
-						<h3>{{selected_genre.genre_name}} <!-- - {{something.length}} items --></h3>
-					</div>
+				<section id="content"> <!-- this will get the  ng-view -->
+					<div class="full-caption">
 					
-					<div id="new-products">
-						<figure ng-repeat="album in albums | limitTo: 12 : 11">
-						<a href="#/album/{{album.album_id}}">
-							<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
-							</a>
-							<figcaption>
-								<sapn id="album-fullname">{{album.album_artist}} - {{album.album_name}}</sapn>
-								<br>
-								<span id="album-description">{{album.description | limitTo:45}}...</span>
-								<br>
-								<span id="price">{{album.album_price | currency}}</span>
-								<img class="icon" src="Images\shopping69.png">
-								<img class="icon" src="Images\information35.png">
-								<br>
-								<span id="atw">Add to wishlist</span>
-							</figcaption>
-						</figure>	
-							
-					</div>
-					
+						<div class="head-box">
+							<h3>{{selected_genre.genre_name}} <!-- - {{something.length}} items --></h3>
+						</div>
+						
+						<div id="new-products">
+							<figure ng-repeat="album in albums | limitTo: 12 : 11">
+							<a href="#/album/{{album.album_id}}">
+								<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
+								</a>
+								<figcaption>
+									<span id="album-fullname">{{album.album_artist}} - {{album.album_name}}</span>
+									<br>
+									<span id="album-description">{{album.album_description | limitTo:55}}...</span>
+									<br>
+									<span class="price">{{album.album_price | currency}}</span>
+									<img class="icon" src="Images\shopping69.png">
+									<img class="icon" src="Images\information35.png">
+									<br>
+									<span id="atw">Add to wishlist</span>
+								</figcaption>
+							</figure>	
+								
+						</div>
+					</div>	
 				</section>	
 				
 				<div class="C-B"></div>
