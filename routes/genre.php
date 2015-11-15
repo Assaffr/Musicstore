@@ -17,6 +17,14 @@ $app->get('/genre/:id', function( $id ) use ($genre){
 	echo json_encode( $albums );
 });
 
+
+//get genre id by name
+$app->get('/genre/turntoid/:name', function( $name ) use ($genre){
+	$albums = $genre->turnNameToID( $name );
+	
+	echo json_encode( $albums );
+});
+
 //search genre
 $app->get('/search/:data', function( $data ) use ($genre){
 	$genre = $genre->searchgenre( $data );

@@ -1,20 +1,25 @@
 var app = angular.module('musicstore', ['Albums', 'Genres', 'ngRoute']);
 
- // app.config(['$routeProvider',
-        // function($routeProvider) {
-            // $routeProvider.
-                // when('/genre/:genre', {
-                   // templateUrl: '',
-				   // controller: ''
-                // })
+ app.config(['$routeProvider',
+        function($routeProvider) {
+            $routeProvider.
+                when('/category/:genre', {
+                   templateUrl: 'templates/genrealbums.html',
+				   controller: 'genrePage'
+                })
+				.
+                when('/album/:album', {
+                   templateUrl: 'templates/productalbums.html',
+				   controller: 'albumPage'
+                })
+              
               
 
-        // }]);
+        }]);
 
 
-app.controller( 'MainController', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
-	// $scope.genre = $routeParams.genre;
-
+app.controller( 'MainController', function( $scope, $http, AlbumsService, GenresService, $routeParams, $location ) {
+	$scope.genre = $routeParams.genre;
 
 	$scope.getAlbumsByGenre = function() {
 		GenresService.getAlbumsByGenre($scope.genre)
@@ -65,16 +70,53 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 
 app.controller( 'genrePage', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
 	$scope.genre = $routeParams.genre;
+	
+	$scope.getGenreIDFromName = function() {
+		GenresService.turnNameToID($scope.genre)
+			.success( function( genres ) {
+				$scope.genreID = genres[0].genre_id;
+				$scope.getAlbumsByGenre();
+			});
+		};
+		
 
 	$scope.getAlbumsByGenre = function() {
-		GenresService.getAlbumsByGenre($scope.selected_genre.genre_id)
+		GenresService.getAlbumsByGenre($scope.genreID)
 			.success( function( genres ) {
 				$scope.genresalbums = genres;
 			});
 		};
 	
-	console.log($scope.genresalbums);
-	$scope.getAlbumsByGenre();
+	$scope.getGenreIDFromName();
 	
+	
+	
+});
+
+app.controller( 'albumPage', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
+	$scope.album = $routeParams.album;
+	
+
+	$scope.getByID = function() {
+		AlbumsService.getByID($scope.album)
+			.success( function( albums ) {
+				$scope.albums = albums[0];
+			});
+		};
+	
+	$scope.getImages = function() {
+	AlbumsService.getImages($scope.album)
+		.success( function( images ) {
+			$scope.images = images;
+			$scope.main_image_path = images[0].image_path
+			$scope.main_image_name = $scope.main_image_path.split("\\")[3];
+			$scope.main_image = "/../Musicstore/CoverArt/" + $scope.main_image_name
+			console.log($scope.main_image);
+		});
+	};
+	
+	
+	$scope.getByID();
+	$scope.getImages();
 	
 });

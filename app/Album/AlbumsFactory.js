@@ -6,12 +6,17 @@ AlbumsModule.factory( 'AlbumsService', ['$http', function($http) {
 		return  $http.get( "api/album" );
 	}
 	
+	AlbumsService.getByID = function( $id ){
+		return  $http.get( "api/album/" + $id );
+	}
+	
+	
 	AlbumsService.getLatest = function(){
 		return  $http.get( "api/album/latest" );
 	}
 	
 	AlbumsService.getImages = function( $id ){
-		return  $http.get( "/album/images/" + $id );
+		return  $http.get( "api/album/images/" + $id );
 	}
 
 	return AlbumsService;

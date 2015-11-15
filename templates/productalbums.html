@@ -1,0 +1,52 @@
+<section id="content">
+					<div class="product-page">
+						<div id="images">
+							<div id="full-size-image"></div> 
+							<!--  this link doesn't work....need another way-->
+							<!--  http://stackoverflow.com/questions/13781685/angularjs-ng-src-equivalent-for-background-imageurl -->
+							
+							<div id="album-images">
+								<img ng-repeat="image in images" ng-src="{{image.image_path}}">
+							
+							</div>
+							<div class="C-B"></div>
+						</div>
+						
+						<article>
+							<div id="product-head">
+								<h2>{{albums.album_artist | uppercase}} - IN {{albums.album_name | uppercase}} ({{albums.album_release_year}})</h2>
+								<p>Availability: <span class="In-stock"> In stock</span> </p>
+							</div>
+							<span class="stock">Only 1000 left</span>
+							<span class="price" ng-bind="albums.album_price | currency"></span>
+							<p class="full-description" ng-bind="albums.album_long_description">
+							</p>
+							
+							<div id="add-to-cart-box">
+								<span class="price" ng-bind="albums.album_price | currency"></span>
+								<div id="qty-box">
+									
+									<div id="input-wrapper">Qty: <input type="number" maxlength="2" ></div>
+									
+									<div id="qty-mini-box">
+										<div class="qty">-</div>
+										<div class="qty">+</div>
+										<div class="C-B"></div>
+									</div>
+									
+									<button>Add to cart</button>
+								</div>
+							</div>
+						
+						</article>
+						
+						
+						<div class="C-B"></div>
+					</div>
+					
+					<div class="head-box">
+							<h3>Details</h3>
+					</div>
+					<p class="full-description" ng-bind="albums.album_long_description">
+									</p>
+				</section>	

@@ -69,7 +69,7 @@ class AlbumModel extends Model {
 	
 	public function getAlbumImages( $id ) {
 	$result = $this->_database->query("
-				SELECT images_to_albums.image_id, images.image_path FROM images_to_albums
+				SELECT images_to_albums.image_id, images.image_path, images.image_title FROM images_to_albums
 				LEFT JOIN images 
 				ON images_to_albums.image_id = images.image_id
 				WHERE images_to_albums.album_id =". $id ."

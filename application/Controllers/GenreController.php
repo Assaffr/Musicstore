@@ -31,4 +31,14 @@ class GenreController extends Controller {
 		return $albums;
 	}
 
+	
+	public function turnNameToID( $name ) {
+		$albums = $this->model->turnNameToID( $name );
+		
+		if ( !$albums )
+			return null;
+		
+		return $albums;
+	}
+	
 }

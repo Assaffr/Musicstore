@@ -24,6 +24,19 @@ class GenreModel extends Model {
 		return $genres;
 	}
 	
+	public function turnNameToID( $name ) {
+			$result = $this->_database->query("
+						SELECT `genre_id` FROM `genres` WHERE `genre_name` = '". $name ."'
+					");
+
+			$albums = array();
+			while ($row = mysqli_fetch_assoc ($result) )
+				$albums[] = $row;
+			
+			if ( !$albums )
+				return null;
+			return $albums;
+		}		
 	
 	public function getAlbumByGenre( $id ) {
 		$result = $this->_database->query("
@@ -34,7 +47,9 @@ class GenreModel extends Model {
 					LEFT JOIN images 
 					ON images_to_albums.image_id = images.image_id
 					INNER JOIN genres_to_albums ON genres_to_albums.album_id = albums.album_id WHERE genres_to_albums.genre_id = ". $id ."
+					GROUP BY albums.album_id
 				");
+
 		$albums = array();
 		while ($row = mysqli_fetch_assoc ($result) )
 			$albums[] = $row;

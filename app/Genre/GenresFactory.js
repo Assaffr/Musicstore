@@ -6,6 +6,10 @@ GenresModule.factory( 'GenresService', ['$http', function($http) {
 		return  $http.get( "api/genre" );
 	}
 
+	GenresService.turnNameToID = function($name){
+		return  $http.get( "api/genre/turntoid/"  + $name );
+	}
+	
 	GenresService.getAlbumsByGenre = function($id){
 		return  $http.get( "api/genre/" + $id );
 	}
