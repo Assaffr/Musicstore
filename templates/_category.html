@@ -1,5 +1,4 @@
-		<div id="wrapper">
-		
+
 			<div id="breadcrumb" class="centerd">
 				<ul class="inline-list">
 					<li><a href="index.html">Home</a></li>
@@ -13,7 +12,7 @@
 			
 				<aside>
 					<nav>
-						<ul>
+						<ul ng-controller="genreList">
 							<a href="#/category/{{genre.genre_name}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre.genre_id == $index}">{{genre.genre_name}} <img  class="icon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img></li></a>
 						</ul>
 					</nav>
@@ -85,7 +84,7 @@
 						
 						<div id="new-products">
 							<figure ng-repeat="album in genresalbums">
-							<a href="product.html#/album/{{album.album_id}}">
+							<a href="#/product/{{album.album_id}}">
 								<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
 								</a>
 								<figcaption>
@@ -110,4 +109,3 @@
 			
 			
 		
-		</div>

@@ -4,21 +4,27 @@ var app = angular.module('musicstore', ['Albums', 'Genres', 'ngRoute']);
         function($routeProvider) {
             $routeProvider.
                 when('/category/:genre', {
-                   templateUrl: 'templates/genrealbums.html',
+                   templateUrl: 'templates/_category.html',
 				   controller: 'genrePage'
                 })
-				.
-                when('/album/:album', {
-                   templateUrl: 'templates/productalbums.html',
+				
+				.when('/product/:album', {
+                   templateUrl: 'templates/_product.html',
 				   controller: 'albumPage'
                 })
               
-              
-
+                .when('/', {
+                   templateUrl: 'templates/_index.html',
+				   controller: 'MainController'
+                })
+			
+				.otherwise({
+					redirectTo : '/'
+				})
         }]);
 
 
-app.controller( 'MainController', function( $scope, $http, AlbumsService, GenresService, $routeParams, $location ) {
+app.controller( 'MainController', function( $scope, AlbumsService, GenresService ) {
 
 	$scope.getAlbumsByGenre = function() {
 		GenresService.getAlbumsByGenre($scope.genre)
@@ -47,11 +53,8 @@ app.controller( 'MainController', function( $scope, $http, AlbumsService, Genres
 
 });
 
-app.controller( 'genrePage', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
-	$scope.genre = $routeParams.genre;
-	$scope.current_genre = $routeParams.genre;
-	
-		$scope.getGenreList = function() {
+app.controller( 'genreList', function( $scope, GenresService) {
+	$scope.getGenreList = function() {
 		GenresService.getList()
 			.success( function( genres ) {
 				$scope.genres = genres;
@@ -71,6 +74,15 @@ app.controller( 'genrePage', function( $scope, $http, AlbumsService, GenresServi
 			genre_name : $scope.genres[genre]["genre_name"]
 		};
 	}
+	
+	
+	
+	
+});
+
+app.controller( 'genrePage', function( $scope, GenresService, $routeParams ) {
+	$scope.genre = $routeParams.genre;
+	$scope.current_genre = $routeParams.genre;
 	
 	
 	$scope.getGenreIDFromName = function() {
@@ -95,7 +107,7 @@ app.controller( 'genrePage', function( $scope, $http, AlbumsService, GenresServi
 	
 });
 
-app.controller( 'albumPage', function( $scope, $http, AlbumsService, GenresService, $routeParams ) {
+app.controller( 'albumPage', function( $scope, AlbumsService, $routeParams ) {
 	$scope.album = $routeParams.album;
 	
 
@@ -107,14 +119,13 @@ app.controller( 'albumPage', function( $scope, $http, AlbumsService, GenresServi
 		};
 	
 	$scope.getImages = function() {
-	AlbumsService.getImages($scope.album)
-		.success( function( images ) {
-			$scope.images = images;
-			$scope.main_image_path = images[0].image_path
-			$scope.main_image_name = $scope.main_image_path.split("\\")[3];
-			$scope.main_image = "/../Musicstore/CoverArt/" + $scope.main_image_name
-			console.log($scope.main_image);
-		});
+		AlbumsService.getImages($scope.album)
+			.success( function( images ) {
+				$scope.images = images;
+				$scope.main_image_path = images[0].image_path
+				$scope.main_image_name = $scope.main_image_path.split("\\")[3];
+				$scope.main_image = "/../Musicstore/CoverArt/" + $scope.main_image_name
+			});
 	};
 	
 	

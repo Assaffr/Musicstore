@@ -1,5 +1,4 @@
-		<div id="wrapper">
-		
+
 			<div id="breadcrumb" class="centerd">
 				<ul class="inline-list">
 					<li><a href="index.html">Home</a></li>
@@ -13,8 +12,8 @@
 			
 				<aside>
 					<nav>
-						<ul ng-controller="genrePage">
-							<a href="category.html#/category/{{genre.genre_name}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre.genre_id == $index}">{{genre.genre_name}} <img  class="icon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img></li></a>
+						<ul ng-controller="genreList">
+							<a href="#/category/{{genre.genre_name}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre.genre_id == $index}">{{genre.genre_name}} <img  class="icon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img></li></a>
 						</ul>
 					</nav>
 					
@@ -134,4 +133,3 @@
 			
 			
 		
-		</div>
