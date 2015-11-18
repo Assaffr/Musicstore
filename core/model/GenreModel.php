@@ -60,4 +60,18 @@ class GenreModel extends Model {
 	}		
 	
 
+	public function getSubGenreByGenre( $id ) {
+		$result = $this->_database->query("
+					SELECT `genre_id`, `genre_name` FROM `genres` WHERE `genre_parent_id` = ". $id ."
+				");
+
+		$albums = array();
+		while ($row = mysqli_fetch_assoc ($result) )
+			$albums[] = $row;
+		
+		if ( !$albums )
+			return null;
+		return $albums;
+	}		
+	
 }

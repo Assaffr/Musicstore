@@ -13,7 +13,7 @@
 				<aside>
 					<nav>
 						<ul ng-controller="genreList">
-							<a href="#/category/{{genre.genre_name}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre.genre_id == $index}">{{genre.genre_name}} <img  class="icon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img></li></a>
+							<a href="#/category/{{genre.genre_name}}" ng-repeat="genre in genres"><li>{{genre.genre_name}} <img  class="icon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img></li></a>
 						</ul>
 					</nav>
 					
