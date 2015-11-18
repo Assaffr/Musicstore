@@ -74,6 +74,7 @@ header a{
 
 
 #top-bar{
+	min-width:1100px;
 	height:80px;
 	background-color: #fb0002; ;
 	
@@ -513,18 +514,22 @@ button{
 	
 }
 
-#add-to-cart-box{
+.inner-box{
+	border:1px solid #BDBDBD;
 	background-color:#FAFAFA;
-	width:354px;
-	height:94px;
 	padding:18px;
 }
 
-#add-to-cart-box .price{
+article .inner-box{
+	width:354px;
+	height:94px;
+}
+
+.inner-box .price{
 	font-size:90%;
 }
 
-#add-to-cart-box #qty-box{
+.inner-box #qty-box{
 	margin-top:10px;
 	height:23px;
 	padding:10px 0;
@@ -579,5 +584,114 @@ input[type=number]{
 	float:left;
 	position:relative;
 	bottom:2px;
+	
+}
+
+#login-head{
+	margin-top:34px;
+	
+}
+
+#new-customers{
+	float:left;
+	margin-right:16px;
+	width:374px;
+	min-height:170px;
+	line-height: 110%;
+}
+
+
+
+.head-inner-box{
+	padding-bottom:12px;
+	border-bottom:1px solid #D8D8D8 ;
+	
+}
+
+#loggin-page button{
+	float:left;
+	font-size:12px;
+	
+}
+
+label{
+	font-size: 70%;
+	font-weight: bold;
+}
+	
+#register{
+	float:left;
+	width:395px;
+	min-height:186px;
+}
+
+.required{
+	color:#F10016;
+	font-size:70%;
+}
+
+#loggin-page span.price{
+	font-size:75%;
+	
+}
+
+#loggin-page .full-description{
+	font-size:70%;
+}
+
+#required-line{
+	float:right;
+}
+
+.backboard{
+	background-color:rgba(0, 0, 0, 0.02);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	
+}
+
+.reg-box h3{
+	text-align:center;
+	color:#908586;
+	font-weight:normal;
+	
+}
+
+.backboard .reg-box{
+	top:170px;
+	box-shadow: 0 2px 26px rgba(0, 0, 0, .3), 0 0 0 1px rgba(0, 0, 0, .1);
+    font-family: helvetica, arial, sans-serif;
+    margin: 0 auto;
+    position: relative;
+    width:260px;
+    background-color:#fff;
+    padding:14px;
+}
+
+.ex-icon{
+	float:right;
+	width:12px;
+	height:12px;
+	background-image:url(/../Musicstore/Images/NXHdRU8vTKX.png);
+	background-repeat: no-repeat;
+    background-size: auto;
+    background-position: -91px -409px;
+	display:inline-block;
+	cursor:pointer;
+}
+
+.reg-box input {
+	display:block;
+	margin-top:5px;
+	width:243px;
+	height:19px;
+	padding:3px 4px;
+}
+
+.reg-box button{
+	width:255px;
 	
 }
