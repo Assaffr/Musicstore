@@ -67,8 +67,8 @@
 						<p class="full-description"> If you have an account with us, please log in.</p>
 						
 						<div>
-							<p> <label class="line" for="user_email">Email Address<span class="required">*</span> </label> <br> <input type="text" name="user_email" id="user_email"><br><span></span></p>
-							<p> <label class="line" for="user_password">Password<span class="required">*</span></label> <br> <input type="text" name="user_password" id="user_password"><br><span></span></p>
+							<p> <label class="line" for="user_email">Email Address<span class="required">*</span> </label> <br> <input type="text" name="user_email" id="user_email" class="invalid"><br><span></span></p>
+							<p> <label class="line" for="user_password">Password<span class="required">*</span></label> <br> <input type="text" name="user_password" id="user_password" class="invalid"><br><span></span></p>
 							
 						</div>
 							<span class="required" id="required-line">* Required Fields</span>
@@ -83,28 +83,37 @@
 				
 					<div class="backboard" ng-hide="false">
 						<div class="reg-box">
-						<i class="ex-icon"></i>
+							
+							<div class="loading" ng-hide="false"></div>
+								
+							<i class="ex-icon"></i>
+							
 							<h3>Registration</h3>
-							<p> 
-								<label class="line" for="user_firstName">Profile Informations</label>
-								<br>
-								<input type="text" name="user_firstName" id="user_firstName" placeholder="First Name">
-								<span class="required">eofginreoing!</span>
-								<input type="text" name="user_lastName" id="user_lastName" placeholder="Last Name">
-								<span class="required">eofginreoing!</span>
-							</p>
 							
-							<p> 
-								<label class="line" for="user_email">Login Datas</label>
-								<br>
-								<input type="text" name="user_email" id="user_email" placeholder="E-mail address">
-								<span class="required">eofginreoing!</span>
-								<input type="password" name="user_password" id="user_password" placeholder="Password">
-								<span class="required">eofginreoing!</span>
-								<input type="password" name="user_re-password" id="user_re-password" placeholder="Password confirmation">
-							</p>
+							<form name="regForm">
 							
-							<button>Register</button>
+								<p> 
+									<label class="line" for="user_firstName">Profile Informations</label>
+									<br>
+									<input type="text" name="user_firstName" id="user_firstName" placeholder="First Name">
+									<span class="required">First name is required!</span>
+									<input type="text" name="user_lastName" id="user_lastName" placeholder="Last Name">
+									<span class="required">Last name is required!</span>
+								</p>
+								
+								<p> 
+									<label class="line" for="user_email">Login Datas</label>
+									<br>
+									<input type="text" name="user_email" id="user_email" placeholder="E-mail address">
+									<span class="required">Email address is required!</span>
+									<input type="password" name="user_password" id="user_password" placeholder="Password">
+									<span class="required">Password is required!</span>
+									<input type="password" name="user_re-password" id="user_re-password" placeholder="Password confirmation">
+								</p>
+								
+								<button>Register</button>
+								
+								</form>
 							<div class="C-B"></div>
 						</div>
 					</div>
@@ -127,11 +136,16 @@
 		<script src="app/app.js"></script>
 		
 		<script src="app/Shared/Modules.js"></script>
+		<script src="app/Shared/Routes.js"></script>
+		<script src="app/Shared/MainController.js"></script>
 		
 		<script src="app/album/AlbumsFactory.js"></script>
 		<script src="app/album/AlbumsDirective.js"></script>
+		<script src="app/album/AlbumPageController.js"></script>
 		
 		<script src="app/genre/GenresFactory.js"></script>
+		<script src="app/genre/GenreListController.js"></script>
+		<script src="app/genre/GenrePageController.js"></script>
 		<script src="app/genre/GenresDirective.js"></script>
 		
 	</body>

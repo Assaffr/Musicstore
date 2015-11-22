@@ -691,15 +691,40 @@ label{
 	cursor:pointer;
 }
 
+input{
+	outline:none;
+}
+
 .reg-box input {
 	display:block;
 	margin-top:5px;
 	width:243px;
 	height:19px;
 	padding:3px 4px;
+
 }
 
 .reg-box button{
 	width:255px;
+	
+}
+
+input.invalid{
+	border:1px dashed red;
+	background-color:#F7E8E5;
+}
+
+div.loading{
+	background-position: center;
+	background-image:url(/../Musicstore/Images/720.gif);
+	background-size:128px 42px;
+	background-repeat: no-repeat;
+	background-color:rgba(255,255,255,.5);
+	position:absolute;
+	z-index:100;
+	width:100%;
+	height:100%;
+	bottom:1px;
+	right:1px;
 	
 }
