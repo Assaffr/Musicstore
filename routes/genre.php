@@ -10,6 +10,12 @@ $app->get('/genre', function() use ($app, $genre){
 	echo json_encode( $genres );
 });
 
+$app->get('/subgenre/:id', function( $id ) use ($app, $genre){
+	$genres = $genre->getSubGenreByGenre($id);
+	
+	echo json_encode( $genres );
+});
+
 //get all albums by genre
 $app->get('/genre/:id', function( $id ) use ($genre){
 	$albums = $genre->getAlbumByGenre( $id );
