@@ -13,7 +13,14 @@
 				<aside>
 					<nav>
 						<ul ng-controller="genreList">
-							<a href="#/category/{{genre.genre_name}}" ng-repeat="genre in genres"><li ng-class="{'selected' : checkIfCurrentGenre(genre.genre_name)}">{{genre.genre_name}} <img  class="angleicon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img></li></a>
+							<a href="#/category/{{genre.genre_name}}" ng-repeat="genre in genres">
+							<li ng-class="{'selected' : checkIfCurrentGenre(genre.genre_name)}">{{genre.genre_name}}
+							<img  class="angleicon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img>
+							</li>
+							<ul ng-show="subgenres && checkIfCurrentGenre(genre.genre_name)">
+								<li  ng-repeat="subgenre in subgenres" > ---> {{subgenre.genre_name}}</li>
+							</ul>
+							</a>
 							
 						</ul>
 					</nav>
