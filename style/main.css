@@ -728,3 +728,29 @@ div.loading{
 	right:1px;
 	
 }
+
+#Checkout-head{
+
+	
+}
+
+#Checkout-page{
+	margin-top:37px;	
+	
+}
+
+#Checkout-page aside{
+	float:right;
+
+}
+
+#Checkout-progress-head{
+	height:45px;
+	margin: 0 0 22px 0;
+}
+
+#Checkout-content{
+
+	float:left;
+	width:640px;
+}

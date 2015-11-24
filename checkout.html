@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-app="musicstore">
+	<head>
+		<link rel="stylesheet" href="style/main.css">
+		<meta charset="utf-8">
+		<title>Musicstore</title>
+	</head>
+	
+	<body ng-controller="MainController">
+
+		<header>
+			<div class="centerd top-nav">
+				 <nav>
+					<ul class="inline-list">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">My Account</a></li>
+						<li><a href="#">My Wishlist</a></li>
+						<li><a href="#">Checkout</a></li>
+						<li><a href="#">Log In</a></li>
+					</ul>
+				</nav>	
+			</div>
+		</header>
+		
+		<section id="top-bar">
+			<div class="centerd">
+				<a href="index.html"><h1>MUSIC</h1></a>
+				<input type="text" name="search" placeholder="Search">
+				<div id="cart_icon"><span>0</span></div>
+				<div id="welcome"><span>Welcome to our<br> online store!</span></div>
+				
+			</div>
+
+		</section>
+		
+		<div id="wrapper">
+		
+
+			
+			
+			
+			<main class="centerd">
+			
+				<div id="Checkout-page">
+				
+					<aside>
+						<div id="Checkout-progress-head" class="head-box">
+							<h3>Your Checkout Progress</h3>
+						</div>
+						
+						
+						
+						
+					</aside>
+					
+					<div id="Checkout-content">
+					
+						<div id="Checkout-head" class="head-box">
+							<h3>Checkout</h3>
+						</div>
+						
+						
+						
+					</div>
+					
+					<div class="C-B"></div>
+				</div>
+			</main>
+			
+
+			
+		
+		</div><!-- end of wrapper -->
+		
+		
+		
+		
+		
+		
+		<script src="app/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+		<script src="app/app.js"></script>
+		
+		<script src="app/Shared/Modules.js"></script>
+		<script src="app/Shared/Routes.js"></script>
+		<script src="app/Shared/MainController.js"></script>
+		
+		<script src="app/album/AlbumsFactory.js"></script>
+		<script src="app/album/AlbumsDirective.js"></script>
+		<script src="app/album/AlbumPageController.js"></script>
+		
+		<script src="app/genre/GenresFactory.js"></script>
+		<script src="app/genre/GenreListController.js"></script>
+		<script src="app/genre/GenrePageController.js"></script>
+		<script src="app/genre/GenresDirective.js"></script>
+		
+	</body>
+</html>
