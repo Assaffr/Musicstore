@@ -59,12 +59,12 @@
 							<h3>Checkout</h3>
 						</div>
 						
-						<div class="red-head selected-head">
+						<div class="red-head">
 							<div class="circle">1</div>
 							<span>Billing Informarion</span>
 						</div>
 						
-						<section>
+						<section ng-show="false">
 							<p>
 								<label class="line" for="order_shipping_address">Address<span class="required">*</span> </label>
 								<br>
@@ -109,6 +109,101 @@
 								<button>Continue</button>
 							</p>
 							
+							
+							<div class="C-B"></div>
+						</section>
+						
+						<div class="red-head">
+								<div class="circle">2</div>
+								<span>Payment Information</span>
+						</div>
+						
+						<section>
+							<p>
+								<input type="radio" name="order_payment_method" value="" id="check">
+								<label  for="check">Check / Money order</label>
+
+							</p>
+							
+							<p>
+								<input type="radio" name="order_payment_method" value="" id="CC">
+								<label for="CC">Credit Card (saved)</label>
+
+							</p>
+							
+							<div id="CC-inputs">
+							
+								<p>
+									<label class="line" for="card_name">Name on Card<span class="required">*</span> </label>
+									<br>
+									<input type="text" name="card_name" id="card_name">
+									<br>
+									<span ng-show="false" class="required">This is a required field</span>
+								</p>
+								
+								<p>
+									<label class="line" for="CC_type">Credit Card Type<span class="required">*</span> </label>
+									<br>
+									<select name="CC_type" id="CC_type" >
+										<option value="visa">Visa</option>
+										<option value="masterCard">Master Card</option>
+										<option value="american_express">American Express</option>
+										<option vlaue="diners">Diners </option>
+									</select>
+									
+								</p>
+								
+								<p>
+									<label class="line" for="CC_number">Credit Card Number<span class="required">*</span> </label>
+									<br>
+									<input type="text" name="CC_number" id="CC_number" >
+									<br>
+									<span ng-show="false" class="required">This is a required field</span>
+								</p>
+								
+								<p>
+									<label class="line" for="CC_expiretion_month">Expiretion date<span class="required">*</span> </label>
+									<br>
+									<select name="CC_expiretion_month" id="CC_expiretion_month" >
+										<option vlue="01">01 - January</option>       
+										<option vlue="02">02 - February</option>       
+										<option vlue="03">03 - March</option>       
+										<option vlue="04">04 - April</option>       
+										<option vlue="05">05 - May</option>       
+										<option vlue="06">06 - June</option>       
+										<option vlue="07">07 - July</option>       
+										<option vlue="08">08 - August</option>       
+										<option vlue="09">09 - September</option>       
+										<option vlue="10">10 - October</option>       
+										<option vlue="11">11 - November</option>       
+										<option vlue="12">12 - December</option> 
+									</select>
+									
+									<select name="CC_expiretion_year" id="CC_expiretion_year" >
+										<option vlue="15">2015</option>       
+										<option vlue="16">2016</option>       
+										<option vlue="17">2017</option>       
+										<option vlue="18">2018</option>       
+										<option vlue="19">2019</option>       
+										<option vlue="20">2020</option>       
+										<option vlue="21">2021</option>       
+										<option vlue="22">2022</option>       
+
+									</select>
+									
+								</p>
+								
+								<p>
+									<label class="line" for="CC_verification_number">Card Verification Number<span class="required">*</span> </label>
+									<br>
+									<input type="text" maxlength="3" name="CC_verification_number" id="CC_verification_number" > <label  for="CC_verification_number">What is this?</label>
+									<br>
+									
+								</p>
+								
+								<button>Continue</button>
+							
+							</div>
 							
 							<div class="C-B"></div>
 						</section>
