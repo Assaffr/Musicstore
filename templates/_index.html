@@ -19,7 +19,11 @@
 				<aside>
 					<nav>
 						<ul ng-controller="genreList">
-							<a href="#/category/{{genre.genre_name}}" ng-repeat="genre in genres"><li ng-class="{'selected' : checkIfCurrentGenre(genre.genre_name)}">{{genre.genre_name}} <img  class="icon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img></li></a>
+							<li ng-repeat="genre in genres" ng-class="{'selected' : checkIfCurrentGenre(genre.genre_name)}">
+							<a href="#/category/{{genre.genre_name}}">{{genre.genre_name}}
+							</a>
+							</li>
+							
 						</ul>
 					</nav>
 					

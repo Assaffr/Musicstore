@@ -13,8 +13,8 @@ class GenreController extends Controller {
 	//validation goes here ---- no-  with validation controller
 
 
-	public function getGenresWithSubCount() {
-		$genres = $this->model->getGenresWithSubCount();
+	public function getAllGenres() {
+		$genres = $this->model->getAllGenres();
 		
 		if ( !$genres )
 			return null;

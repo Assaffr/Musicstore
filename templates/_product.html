@@ -13,7 +13,10 @@
 				<aside>
 					<nav>
 						<ul ng-controller="genreList">
-							<a href="#/category/{{genre.genre_name}}" ng-repeat="genre in genres"><li>{{genre.genre_name}} <img  class="icon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img></li></a>
+							<li ng-repeat="genre in genres" ng-class="{'selected' : checkIfCurrentGenre(genre.genre_name)}">
+							<a href="#/category/{{genre.genre_name}}">{{genre.genre_name}}
+							</a>
+							</li>
 						</ul>
 					</nav>
 					
@@ -78,12 +81,9 @@
 				<section id="content">
 					<div class="product-page">
 						<div id="images">
-							<div id="full-size-image"></div> 
-							<!--  this link doesn't work....need another way-->
-							<!--  http://stackoverflow.com/questions/13781685/angularjs-ng-src-equivalent-for-background-imageurl -->
-							
+							<img class="full-size-image" ng-src="{{image.image_path}}">
 							<div id="album-images">
-								<img ng-repeat="image in images" ng-src="{{image.image_path}}">
+								<img ng-repeat="image in images" ng-src="{{image.image_path}}" ng-click="changeImage($index)" style="cursor: pointer">
 							
 							</div>
 							<div class="C-B"></div>

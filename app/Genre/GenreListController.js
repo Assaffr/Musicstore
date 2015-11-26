@@ -8,13 +8,6 @@ app.controller( 'genreList', function( $scope, GenresService, $routeParams) {
 
 	$scope.getGenreList();
 	
-	$scope.checkSubGenre = function(genre){
-		if ($scope.genres[genre].childcount != 0){
-			return true
-		}
-	}
-	
-
 
 	$scope.checkIfCurrentGenre = function(genre){
 		if (genre == $routeParams.genre)

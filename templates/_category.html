@@ -16,15 +16,7 @@
 							
 							<li ng-repeat="genre in genres" ng-class="{'selected' : checkIfCurrentGenre(genre.genre_name)}">
 							<a href="#/category/{{genre.genre_name}}">{{genre.genre_name}}
-							<img  class="angleicon" src="Images/angle1.png" ng-show="checkSubGenre($index)"></img>
 							</a>
-							
-							<ul ng-show="subgenres && checkIfCurrentGenre(genre.genre_name)">
-								
-								<li  ng-repeat="subgenre in subgenres" >
-								<a href="#/category/{{genre.genre_name}}1"> ---> {{subgenre.genre_name}}</a>
-								</li>
-							</ul>
 							</li>
 							
 							
