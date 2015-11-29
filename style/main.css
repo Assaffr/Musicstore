@@ -627,7 +627,7 @@ label.line {
 }
 
 label {
-	font-size: 70%;
+	font-size: 11px;
 }
 	
 #register{
@@ -825,3 +825,48 @@ div.loading{
 	
 }
 
+.table-container {
+	padding:0 !important;
+	display: table;
+	width:100%;
+	font-size: 11px;
+	color:#8E8783;
+	border-right:0 !important;
+	border-bottom:0 !important;
+}
+.row {
+	display: table-row;
+	text-align:center;
+  
+ 
+}
+
+.row:nth-child(1){
+	color:#000 !important;	
+	
+}
+
+.column {
+	display: table-cell;
+	padding:13.5px 16px;
+	border-right:1px solid #C5C5C5;
+	border-bottom:1px solid #C5C5C5;
+}
+
+div.row div.column:nth-child(1){
+	width:486px;
+	text-align:left !important;
+	font-size: 10px;
+	color:#000 !important;
+	
+}
+
+#total-line{
+	color:#000;
+	
+}
+
+#total-line div.column:nth-child(1) , #total-line div.column:nth-child(2){
+	border-right:0 !important;
+	
+}
