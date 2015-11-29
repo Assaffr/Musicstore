@@ -870,3 +870,16 @@ div.row div.column:nth-child(1){
 	border-right:0 !important;
 	
 }
+
+#Checkout-page aside .red-head{
+	background-color:#717171;
+	font-weight:bold;
+	
+}
+
+#Checkout-page aside section{
+	font-size:18px;
+	line-height:96%;
+	padding: 0px 10px;
+	
+}
