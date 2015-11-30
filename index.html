@@ -23,9 +23,11 @@
 		</header>
 		
 		<section id="top-bar">
-			<div class="centerd">
+			<div ng-controller="SearchController"  class="centerd">
 				<a href="#/"><h1>MUSIC</h1></a>
-				<input type="text" name="search" placeholder="Search">
+				<input ng-model="searchbox" type="text" name="search" placeholder="Search" ng-change="checkFor3Chars()">
+				<!-- this currently just shows the name of the album on the side, needs proper box-->
+				<div ng-repeat="result in results">{{result.album_name}}</div>
 				<div id="cart_icon"><span>0</span></div>
 				<div id="welcome"><span>Welcome to our<br> online store!</span></div>
 				
@@ -47,6 +49,10 @@
 		<script src="app/album/AlbumsFactory.js"></script>
 		<script src="app/album/AlbumsDirective.js"></script>
 		<script src="app/album/AlbumPageController.js"></script>
+		
+		<script src="app/search/SearchFactory.js"></script>
+		<script src="app/search/SearchController.js"></script>
+
 		
 		<script src="app/genre/GenresFactory.js"></script>
 		<script src="app/genre/GenreListController.js"></script>

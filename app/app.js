@@ -1,1 +1,1 @@
-var app = angular.module('musicstore', ['Albums', 'Genres', 'ngRoute']);
+var app = angular.module('musicstore', ['Albums', 'Genres', 'Search', 'ngRoute']);

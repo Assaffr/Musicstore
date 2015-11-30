@@ -1,4 +1,4 @@
-app.controller( 'MainController', function( $scope, AlbumsService, GenresService ) {
+app.controller( 'MainController', function( $scope, AlbumsService, GenresService) {
 
 	$scope.getAlbumsByGenre = function() {
 		GenresService.getAlbumsByGenre($scope.genre)

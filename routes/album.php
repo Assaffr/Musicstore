@@ -31,7 +31,7 @@ $app->get('/album/images/:id', function( $id ) use ($album){
 $app->get('/search/:data', function( $data ) use ($album){
 	$album = $album->searchAlbum( $data );
 	
-	var_dump($album);
+	echo json_encode( $album );
 });
 
 //delete album
