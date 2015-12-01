@@ -15,6 +15,10 @@ app.config(['$routeProvider',
 			   templateUrl: 'templates/_index.html',
 			   controller: 'MainController'
 			})
+			.when('/login', {
+			   templateUrl: 'templates/_login.html',
+			   controller: 'LoginController'
+			})
 		
 			.otherwise({
 				redirectTo : '/'
