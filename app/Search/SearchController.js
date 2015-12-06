@@ -1,7 +1,7 @@
 app.controller( 'SearchController', function( $scope, SearchService ) {
 
 	$scope.checkFor3Chars = function(){
-		if ($scope.searchbox.length > 3)
+		if ($scope.searchbox.length > 2)
 			$scope.searchTerm($scope.searchbox);
 	}
 	
@@ -10,6 +10,11 @@ app.controller( 'SearchController', function( $scope, SearchService ) {
 			.success( function( result ) {
 				$scope.results = result;
 			});
+	}
+	
+	$scope.emptySearch = function(){
+		$scope.searchbox = "";
+		$scope.results = "";
 	}
 	
 });

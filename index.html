@@ -24,19 +24,19 @@
 		<section id="top-bar">
 			<div ng-controller="SearchController"  class="centerd">
 				<a href="#/"><h1>MUSIC</h1></a>
-				<input ng-model="searchbox" type="text" name="search" placeholder="Search" ng-change="checkFor3Chars()">
+				<input ng-model="searchbox" type="text" name="text" placeholder="Search" ng-change="checkFor3Chars()">
 					<div id="cart_icon"><span>0</span></div>
 				<div id="welcome"><span>Welcome to our<br> online store!</span></div>
 				
-				<div id="search-results" ng-if="true">
+				<div id="search-results" ng-if="results && searchbox">
 				
-					<div class="single-search-result">
-						<a href="#/product/60">
-							<img ng-src="">
+					<div class="single-search-result" ng-repeat="result in results">
+						<a href="#/product/{{result.album_id}}" ng-click="emptySearch()">
+							<img ng-src="{{result.image_path}}">
 							<div>
-								<span>AM</span><br>
-								<span>Arctic Monkeys</span><br>
-								<span>Released 2007</span>
+								<span>{{result.album_name}}</span><br>
+								<span>{{result.album_artist}}</span><br>
+								<span>Released {{result.album_release_year}}</span>
 							</div>
 						</a>
 					</div>

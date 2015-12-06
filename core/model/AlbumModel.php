@@ -92,8 +92,14 @@ class AlbumModel extends Model {
 	}
 	
 	public function searchAlbum( $data ) {
-		$results = $this->_database->query( "(SELECT * FROM `albums` WHERE `album_name` LIKE '%".$data."%') UNION (SELECT * FROM `albums` WHERE `album_artist` LIKE '%".$data."%')" );
+		$results = $this->_database->query( "		(SELECT * FROM `albums` LEFT JOIN images_to_albums ON albums.album_id = images_to_albums.album_id LEFT JOIN images ON images_to_albums.image_id = images.image_id 
+WHERE `album_name` LIKE '%".$data."%'
+GROUP BY albums.album_id) UNION (SELECT * FROM `albums` LEFT JOIN images_to_albums ON albums.album_id = images_to_albums.album_id LEFT JOIN images ON images_to_albums.image_id = images.image_id 
+WHERE `album_artist` LIKE '%".$data."%'
+GROUP BY albums.album_id)
+		" );
 		
+
 		if ( $results ) {
 			$albums = array();
 			while ( $row = $results->fetch_assoc() )
