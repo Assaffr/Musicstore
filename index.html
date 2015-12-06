@@ -25,10 +25,29 @@
 			<div ng-controller="SearchController"  class="centerd">
 				<a href="#/"><h1>MUSIC</h1></a>
 				<input ng-model="searchbox" type="text" name="search" placeholder="Search" ng-change="checkFor3Chars()">
-				<!-- this currently just shows the name of the album on the side, needs proper box-->
-				<div ng-repeat="result in results">{{result.album_name}}</div>
-				<div id="cart_icon"><span>0</span></div>
+					<div id="cart_icon"><span>0</span></div>
 				<div id="welcome"><span>Welcome to our<br> online store!</span></div>
+				
+				<div id="search-results" ng-if="true">
+				
+					<div class="single-search-result">
+						<a href="#/product/60">
+							<img ng-src="">
+							<div>
+								<span>AM</span><br>
+								<span>Arctic Monkeys</span><br>
+								<span>Released 2007</span>
+							</div>
+						</a>
+					</div>
+
+					
+				</div>
+				
+				
+				<!-- this currently just shows the name of the album on the side, needs proper box <div ng-repeat="result in results">{{result.album_name}}</div>-->
+				
+			
 				
 			</div>
 
