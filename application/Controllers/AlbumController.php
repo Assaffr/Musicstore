@@ -27,6 +27,24 @@ class AlbumController extends Controller {
 		return $albums;
 	}
 	
+	public function makeCartData($data ){
+		foreach ($data as $id){
+			$albumdata[] = $this->model->getAlbumByIDwithImage($id);
+		}
+		return $albumdata;
+		
+	}
+	
+	public function getAlbumByIDwithImage($id) {
+		$albums = $this->model->getAlbumByIDwithImage($id);
+		
+		if ( !$albums )
+			return null;
+		
+		return $albums;
+}
+
+	
 	public function getLatest18Albums() {
 		$albums = $this->model->getLatest18Albums();
 		

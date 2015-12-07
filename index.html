@@ -25,7 +25,7 @@
 			<div ng-controller="SearchController"  class="centerd">
 				<a href="#/"><h1>MUSIC</h1></a>
 				<input ng-model="searchbox" type="text" name="text" placeholder="Search" ng-change="checkFor3Chars()">
-					<div id="cart_icon"><span>0</span></div>
+					<div id="cart_icon"><span ng-bind="cartlength"></span></div>
 				<div id="welcome"><span>Welcome to our<br> online store!</span></div>
 				
 				<div id="search-results" ng-if="results && searchbox">
@@ -43,11 +43,7 @@
 
 					
 				</div>
-				
-				
-				<!-- this currently just shows the name of the album on the side, needs proper box <div ng-repeat="result in results">{{result.album_name}}</div>-->
-				
-			
+						
 				
 			</div>
 

@@ -1,22 +1,37 @@
-CartModule.factory( 'CartFactory', ['$window', '$rootScope' , function($window, $rootScope) {
+CartModule.factory( 'CartFactory', ['$window', '$rootScope', '$http', function($window, $rootScope, $http) {
 	var CartFactory = {};
 	
 	
 	CartFactory.putItem = function( itemId ){
+
 		if ($window.localStorage.getItem('cart-storage')){
-				$window.localStorage && $window.localStorage.setItem('cart-storage', $window.localStorage.getItem('cart-storage') + itemId );
+			var cart = angular.fromJson($window.localStorage.getItem('cart-storage'));
+			var product = angular.fromJson(itemId);
+			cart.push(product);
+			var cartjson = angular.toJson(cart);
+			$window.localStorage && $window.localStorage.setItem('cart-storage', cartjson);
 		}
 		else {
-			$window.localStorage && $window.localStorage.setItem('cart-storage', itemId );
+			var cart = [];
+			cart.push(itemId);
+			$window.localStorage && $window.localStorage.setItem('cart-storage', "[" +  cart + "]");
 		}
 		return this;
 	}
 	
-	CartFactory.getAllCart = function(){
-		return $window.localStorage && $window.localStorage.getItem('cart-storage');
+	
+	var cartstorage = $window.localStorage.getItem('cart-storage');
+
+	CartFactory.replaceStorage = function( storage ){
+
+		$window.localStorage && $window.localStorage.setItem('cart-storage', storage);
+	
+	return this;
+}
+
+	CartFactory.getInfoByIDs = function( json ){
+		return  $http.post( "api/album/cartdata", json );
 	}
-
-
 	
 	return CartFactory;
 	

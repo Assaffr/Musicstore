@@ -21,6 +21,20 @@ $app->get('/album/:id', function( $id ) use ($album){
 	echo json_encode( $album );
 });
 
+$app->post('/album/cartdata', function() use ($app, $album){
+	$data = json_decode( $app->request->getBody(), true );
+	$album = $album->makeCartData( $data );
+
+	echo json_encode( $album );
+});
+
+//get specific album
+$app->get('/album/withimage/:id', function( $id ) use ($album){
+	$album = $album->getAlbumByIDwithImage( $id );
+	
+	echo json_encode( $album );
+});
+
 $app->get('/album/images/:id', function( $id ) use ($album){
 	$album = $album->getAlbumImages( $id );
 	

@@ -889,7 +889,7 @@ div.row div.column:nth-child(1){
 	padding:0 10px;
 	display:table;
 	border-radius:3px;
-	width:255px;
+	min-width:255px;
 	background-color:#fff;
     position: relative;
     z-index: 200;
@@ -930,3 +930,8 @@ div.row div.column:nth-child(1){
 	border-bottom:none;
 	
 }
+
+.single-search-result:hover{
+	background-color: #E9EAED;
+}
+.
