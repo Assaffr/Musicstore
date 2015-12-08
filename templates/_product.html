@@ -95,6 +95,8 @@
 									</div>
 									
 									<button ng-click="addToCart(albums.album_id, quantity)" ng-show="quantity > 0">Add to cart</button>
+									<button ng-controller="FavoritesController" ng-click="addToFavorites(albums.album_id)">Add To Wishlist</button>
+									<button ng-controller="FavoritesController" ng-click="removeFromFavs(albums.album_id)">remove from Wishlist</button>
 								</div>
 							</div>
 						

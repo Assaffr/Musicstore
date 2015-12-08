@@ -59,7 +59,7 @@ app.controller( 'CartController', function( $scope, CartFactory, $window, Albums
 					result[i][0]["quantity"] = cart[i][0].quantity;
 					$scope.cart = result;
 					$scope.total +=  parseFloat(result[i][0]["album_price"]) * result[i][0]["quantity"];
-					console.log($scope.total);
+					
 
 				}
 				
