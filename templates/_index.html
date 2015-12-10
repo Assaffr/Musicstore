@@ -55,15 +55,22 @@
 						<figure ng-repeat="album in albums | limitTo: 12 : 11">
 						<a href="#/product/{{album.album_id}}">
 							<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
-							<figcaption>
-								{{album.album_name}}
-								<br>
-								{{album.album_artist}}
-								<br>
-								{{album.album_price | currency}}
-							</figcaption>
-						</figure>	
 							</a>
+							<figcaption>
+								<span id="album-fullname">{{album.album_artist}} - {{album.album_name}}</span>
+								<br>
+								<span id="album-description">{{album.album_description | limitTo:55}}...</span>
+								<br>
+								<span class="price">{{album.album_price | currency}}</span>
+								<img class="icon" ng-controller="CartController" src="Images\shopping69.png" ng-hide="checkIfExistsInCart(album.album_id, checkQuantity(album.album_id))" title="Add one album to cart" ng-click="addToCart(album.album_id, 1)">
+								<img class="icon" ng-controller="CartController" src="Images\shopping70.png" ng-show="checkIfExistsInCart(album.album_id, 1)" title="Remove from cart" ng-click="removeFromCart(album.album_id)">
+								<img class="icon" src="Images\information35.png" title="{{album.album_description}}">
+								<br>
+								<span id="atw" ng-controller="FavoritesController" ng-hide="checkIfExistsInFavs(album.album_id)" ng-click="addToFavorites(album.album_id)">Add to wishlist</span>
+								<span id="atw" ng-controller="FavoritesController" ng-show="checkIfExistsInFavs(album.album_id)" ng-click="removeFromFavs(album.album_id)">Remove from wishlist</span>
+								</figcaption>
+						</figure>	
+							
 					</div>
 					
 				</section>	

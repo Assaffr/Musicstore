@@ -1,0 +1,246 @@
+		<div id="wrapper">
+		
+
+			
+			
+			
+			<main class="centerd">
+			
+				<div id="Checkout-page">
+				
+					<aside>
+						<div id="Checkout-progress-head" class="head-box">
+							<h3>Your Checkout Progress</h3>
+						</div>
+						
+						<div>
+							<div class="red-head">
+								<span>Billing Information</span>
+							 </div>
+							 
+							 <section>
+							 	<p class="full-description">
+							 		<span>Alex Tuner</span><br>
+							 		<span>London Price 432</span><br>
+							 		<span>Sheffield, 35660</span><br>
+							 		<span>T:0520000000</span><br>
+							 	</p>
+							 
+							 </section>
+							 
+							 <div class="red-head">
+								<span>Payment Method</span>
+							 </div>
+							 
+							 <section>
+							 	<p class="full-description">
+							 		<span>Alex Tuner</span><br>
+							 		<span>London Price 432</span><br>
+							 		<span>Sheffield, 35660</span><br>
+							 		<span>T:0520000000</span><br>
+							 	</p>
+							 </section>
+						</div>
+						
+						
+					</aside>
+					
+					<div id="Checkout-content">
+					
+						<div id="Checkout-head" class="head-box">
+							<h3>Checkout</h3>
+						</div>
+						
+						<div class="red-head">
+							<div class="circle">1</div>
+							<span>Billing Informarion</span>
+						</div>
+						
+						<section ng-show="true">
+							<p>
+								<label class="line" for="order_shipping_address">Address<span class="required">*</span> </label>
+								<br>
+								<input type="text" name="order_shipping_address" id="order_shipping_address" >
+								<br>
+								<span class="required">This is a required field</span>
+							</p>
+								
+							<div>	
+								<p class="inline">
+									<label class="line" for="order_shipping_city">City<span class="required">*</span> </label>
+									<br>
+									<input type="text" name="order_shipping_city" id="order_shipping_city" >
+									<br>
+									<span class="required">This is a required field</span>
+								</p>
+								
+								<p class="inline">
+									<label class="line" for="order_shipping_zipcode">Zip/Postal Code<span class="required">*</span> </label>
+									<br>
+									<input type="text" name="order_shipping_zipcode" id="order_shipping_zipcode" >
+									<br>
+									<span class="required">This is a required field</span>
+								</p>
+								
+								<div class="C-B"></div>
+								
+							</div>
+							
+							<p>
+								<label class="line" for="order_shipping_phone">Telphone<span class="required">*</span> </label>
+								<br>
+								<input type="text" name="order_shipping_phone" id="order_shipping_phone" >
+								<br>
+								<span class="required">This is a required field</span>
+							</p>
+							
+							
+							<p>
+								<span class="required">* Required Fields</span>
+								
+								<button>Continue</button>
+							</p>
+							
+							
+							<div class="C-B"></div>
+						</section>
+						
+						<div class="red-head">
+								<div class="circle">2</div>
+								<span>Payment Information</span>
+						</div>
+						
+						<section ng-show="true">
+							<p>
+								<input type="radio" name="order_payment_method" value="" id="check">
+								<label  for="check">Check / Money order</label>
+
+							</p>
+							
+							<p>
+								<input type="radio" name="order_payment_method" value="" id="CC">
+								<label for="CC">Credit Card (saved)</label>
+
+							</p>
+							
+							<div id="CC-inputs">
+							
+								<p>
+									<label class="line" for="card_name">Name on Card<span class="required">*</span> </label>
+									<br>
+									<input type="text" name="card_name" id="card_name">
+									<br>
+									<span ng-show="false" class="required">This is a required field</span>
+								</p>
+								
+								<p>
+									<label class="line" for="CC_type">Credit Card Type<span class="required">*</span> </label>
+									<br>
+									<select name="CC_type" id="CC_type" >
+										<option value="visa">Visa</option>
+										<option value="masterCard">Master Card</option>
+										<option value="american_express">American Express</option>
+										<option vlaue="diners">Diners </option>
+									</select>
+									
+								</p>
+								
+								<p>
+									<label class="line" for="CC_number">Credit Card Number<span class="required">*</span> </label>
+									<br>
+									<input type="text" name="CC_number" id="CC_number" >
+									<br>
+									<span ng-show="false" class="required">This is a required field</span>
+								</p>
+								
+								<p>
+									<label class="line" for="CC_expiretion_month">Expiretion date<span class="required">*</span> </label>
+									<br>
+									<select name="CC_expiretion_month" id="CC_expiretion_month" >
+										<option value="01">01 - January</option>       
+										<option value="02">02 - February</option>       
+										<option value="03">03 - March</option>       
+										<option value="04">04 - April</option>       
+										<option value="05">05 - May</option>       
+										<option value="06">06 - June</option>       
+										<option value="07">07 - July</option>       
+										<option value="08">08 - August</option>       
+										<option value="09">09 - September</option>       
+										<option value="10">10 - October</option>       
+										<option value="11">11 - November</option>       
+										<option value="12">12 - December</option> 
+									</select>
+									
+									<select name="CC_expiretion_year" id="CC_expiretion_year" >
+										<option value="15">2015</option>       
+										<option value="16">2016</option>       
+										<option value="17">2017</option>       
+										<option value="18">2018</option>       
+										<option value="19">2019</option>       
+										<option value="20">2020</option>       
+										<option value="21">2021</option>       
+										<option value="22">2022</option>       
+
+									</select>
+									
+								</p>
+								
+								<p>
+									<label class="line" for="CC_verification_number">Card Verification Number<span class="required">*</span> </label>
+									<br>
+									<input type="text" maxlength="3" name="CC_verification_number" id="CC_verification_number" > <label  for="CC_verification_number">What is this?</label>
+									<br>
+									
+								</p>
+								
+								<button>Continue</button>
+							
+							</div>
+							
+							<div class="C-B"></div>
+						</section>
+						
+						<div class="red-head">
+								<div class="circle">3</div>
+								<span>Order Review</span>
+						</div>
+						
+						<section class="table-container" ng-controller="CartController">
+							<div class="row">
+								<div class="column"><label class="line">Product Name</label></div>
+								<div class="column"><label class="line">Price</label></div>
+								<div class="column"><label class="line">Qty</label></div>
+								<div class="column"><label class="line">Subtotal</label></div>
+							
+							</div>
+							
+							<div class="row" ng-repeat="albums in cart">
+								<div class="column">{{albums[0].album_artist}} - {{albums[0].album_name}}</div>
+								<div class="column">{{albums[0].album_price | currency}}</div>
+								<div class="column">{{albums[0].quantity}}</div>
+								<div class="column">{{albums[0].quantity * albums[0].album_price | currency}} </div>
+							
+							</div>
+							
+							<div class="row" id="total-line">
+								<div class="column"></div>
+								<div class="column"></div>
+								<div class="column"><label class="line">Total</label></div>
+								<div class="column"><label class="line">{{total | currency}}</label></div>
+							
+							</div>
+						
+						
+						</section>
+						
+						
+					</div>
+					
+					<div class="C-B"></div>
+				</div>
+			</main>
+			
+
+			
+		
+		</div>

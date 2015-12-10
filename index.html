@@ -13,8 +13,8 @@
 					<ul>
 						<li><a href="#/">Home</a></li>
 						<li><a href="#/">My Account</a></li>
-						<li><a href="#/">My Wishlist</a></li>
-						<li><a href="#/">Checkout</a></li>
+						<li><a href="#/" title="there's no wishlist page in the pdf but the object still works">My Wishlist</a></li>
+						<li><a href="#/checkout">Checkout</a></li>
 						<li><a href="#/login">Log In</a></li>
 					</ul>
 				</nav>	
@@ -25,7 +25,7 @@
 			<div ng-controller="SearchController"  class="centerd">
 				<a href="#/"><h1>MUSIC</h1></a>
 				<input ng-model="searchbox" type="text" name="text" placeholder="Search" ng-change="checkFor3Chars()">
-					<div id="cart_icon"><span ng-bind="cartlength"></span></div>
+					<div id="cart_icon"><span ng-controller="CartController" ng-bind="cart.length"></span></div>
 				<div id="welcome"><span>Welcome to our<br> online store!</span></div>
 				
 				<div id="search-results" ng-if="results && searchbox">
@@ -61,7 +61,6 @@
 		<script src="app/Shared/MainController.js"></script>
 		
 		<script src="app/album/AlbumsFactory.js"></script>
-		<script src="app/album/AlbumsDirective.js"></script>
 		<script src="app/album/AlbumPageController.js"></script>
 		
 		<script src="app/search/SearchFactory.js"></script>
@@ -70,8 +69,15 @@
 		<script src="app/Login/LoginController.js"></script>
 		<script src="app/Login/LoginFactory.js"></script>
 		
+		<script src="app/Register/RegisterController.js"></script>
+		<script src="app/Register/RegisterFactory.js"></script>
+		
 		<script src="app/Cart/CartController.js"></script>
 		<script src="app/Cart/CartFactory.js"></script>		
+		<script src="app/Cart/CartDirective.js"></script>		
+		
+		<script src="app/Checkout/CheckoutController.js"></script>
+		<script src="app/Checkout/CheckoutFactory.js"></script>		
 		
 		<script src="app/Favorites/FavoritesController.js"></script>
 		<script src="app/Favorites/FavoritesFactory.js"></script>		

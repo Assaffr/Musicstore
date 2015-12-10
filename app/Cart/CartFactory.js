@@ -20,7 +20,7 @@ CartModule.factory( 'CartFactory', ['$window', '$rootScope', '$http', function($
 	}
 	
 	
-	var cartstorage = $window.localStorage.getItem('cart-storage');
+	CartFactory.cartstorage = $window.localStorage["cart-storage"];
 
 	CartFactory.replaceStorage = function( storage ){
 
