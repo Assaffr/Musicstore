@@ -205,7 +205,7 @@
 								<span>Order Review</span>
 						</div>
 						
-						<section class="table-container" ng-controller="CartController">
+						<section class="table-container" ng-controller="CartController" ng-init="getCartObject()">
 							<div class="row">
 								<div class="column"><label class="line">Product Name</label></div>
 								<div class="column"><label class="line">Price</label></div>
@@ -214,7 +214,7 @@
 							
 							</div>
 							
-							<div class="row" ng-repeat="albums in cart">
+							<div class="row"  ng-repeat="albums in cart">
 								<div class="column">{{albums[0].album_artist}} - {{albums[0].album_name}}</div>
 								<div class="column">{{albums[0].album_price | currency}}</div>
 								<div class="column">{{albums[0].quantity}}</div>

@@ -2,7 +2,7 @@ app.controller( 'RegisterController', function( $scope, RegisterFactory ) {
 	
 	
 	$scope.register_form = function(){
-		console.log( $scope.regForm.user_email.$dirty )
+		console.log($scope.register);
 			RegisterFactory.registerUser($scope.register)
 			.success( function( result ) {
 				
@@ -10,11 +10,9 @@ app.controller( 'RegisterController', function( $scope, RegisterFactory ) {
 		
 	};
 	$scope.checkEmail = function(email){
-		console.log("fg");
-		// RegisterFactory.checkMailAvail(email)
-			// .success( function( result ) {
-				
-			// })
-			return true;
+		RegisterFactory.checkMailAvail(email)
+			.success( function( result ) {
+				console.log(result);
+			})
 	};
 });

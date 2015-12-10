@@ -60,7 +60,7 @@
 		
 		
 	
-		<div class="backboard" ng-show="regBox">
+		<div class="backboard" ng-show="regBox" ng-controller="RegisterController">
 			<div class="reg-box">
 				
 				<div class="loading" ng-show="false"></div>
@@ -69,28 +69,27 @@
 				
 				<h3>Registration</h3>
 				
-				<form name="regForm">
+				<form name="regForm" novalidate>
 				
 					<p> 
 						<label class="line" for="user_firstName">Profile Informations</label>
 						<br>
-						<input type="text" name="user_firstName" id="user_firstName" placeholder="First Name">
+						<input type="text" ng-model="register.user_firstname" name="user_firstName" id="user_firstName" placeholder="First Name">
 						<span class="required">First name is required!</span>
-						<input type="text" name="user_lastName" id="user_lastName" placeholder="Last Name">
+						<input type="text" name="user_lastName" ng-model="register.user_lastname" id="user_lastName" placeholder="Last Name">
 						<span class="required">Last name is required!</span>
 					</p>
 					
 					<p> 
 						<label class="line" for="user_email">Login Datas</label>
 						<br>
-						<input type="text" name="user_email" id="user_email" placeholder="E-mail address">
+						<input type="text" name="user_email" ng-model="register.user_email" id="user_email" placeholder="E-mail address">
 						<span class="required">Email address is required!</span>
-						<input type="password" name="user_password" id="user_password" placeholder="Password">
+						<input type="password" ng-model="register.user_password"  name="user_password" id="user_password" placeholder="Password">
 						<span class="required">Password is required!</span>
 						<input type="password" name="user_re-password" id="user_re-password" placeholder="Password confirmation">
 					</p>
-					
-					<button>Register</button>
+					<button ng-click="register_form()">Register</button>
 					
 					</form>
 				<div class="C-B"></div>

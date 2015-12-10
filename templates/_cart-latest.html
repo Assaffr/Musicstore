@@ -1,8 +1,8 @@
 					<div id="cart" ng-controller="CartController">
 						<div class="head-box"><h3>My cart</h3></div>
 						<p ng-hide="cart">You have no items in your shopping cart.</p>
-						
-						<div ng-show="cart" id="cart-content">
+
+						<div ng-show="cart" ng-init="getCartObject()" id="cart-content">
 						
 							<p>There are <span>{{cart.length}} items</span> in your cart</p>
 							

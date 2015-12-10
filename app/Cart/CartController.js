@@ -150,9 +150,10 @@ app.controller( 'CartController', function( $scope, CartFactory, $window, Albums
 				
 			});
 		}
+		
 	};
 	
-	$scope.getCartObject();
+	
 	
 	
 	/**

@@ -7,7 +7,7 @@ RegisterModule.factory( 'RegisterFactory', ['$http', function($http) {
 	}
 	
 	RegisterFactory.checkMailAvail = function( email ){
-		return  $http.get( "api/checkmail/" + email );
+		return  $http.get( "api/checkemail/" + email );
 	}
 	
 	return RegisterFactory;
