@@ -13,6 +13,15 @@ app.controller( 'RegisterController', function( $scope, RegisterFactory ) {
 			.success( function( result ) {
 				// result 0 = the mail is available, result 1 = it is taken
 				console.log(result);
+                if ( result == 0 ) {
+                	$scope.regForm.user_email.$setValidity("availability", true);
+                    return undefined;
+                } else {
+                	$scope.regForm.user_email.$setValidity("availability", false);
+                    return undefined;
+                }
+				
+				
 			})
 	};
 });
