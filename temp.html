@@ -1,54 +1,5 @@
-
-			
-			<main class="centerd">
-			
-				<aside>
-					<nav>
-						<ul>
-							<a href="#/genre/{{genre.genre_id}}" ng-repeat="genre in genres" ng-click="pickGenre($index)"><li ng-class="{'selected' : selected_genre == $index}">{{genre.genre_name}}</li></a>
-						</ul>
-					</nav>
-					
-					<div id="new-couple">
-					
-						<figure ng-repeat="album in albums | limitTo: 2 : 9">
-							<a href="#/album/{{album.album_id}}">
-							<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
-							<figcaption>
-								{{album.album_name}}
-								<br>
-								{{album.album_artist}}
-							</figcaption>
-						</figure>
-						</a>
-						
-					
-					</div>
-					
-				</aside>
-				
-				<section id="content">
-				
-					<div class="head-box">
-						<h3>New Products</h3>
-					</div>
-					
-					<div id="new-products">
-						<figure ng-repeat="album in albums | limitTo: 12 : 11">
-						<a href="#/album/{{album.album_id}}">
-							<img ng-src="{{album.image_path}}"  alt="{{album.album_name}}">
-							<figcaption>
-								{{album.album_name}}
-								<br>
-								{{album.album_artist}}
-								<br>
-								{{album.album_price | currency}}
-							</figcaption>
-						</figure>	
-							</a>
-					</div>
-					
-				</section>	
-				
-				<div class="C-B"></div>
-			</main>
+						<input type="password" ng-pattern="/{{register.user_password}}/"  name="user_rePassword" id="user_rePassword" placeholder="Password confirmation" required>
+						<span class="required" ng-show="true">
+	 						 <span ng-show="regForm.user_rePassword.$dirty && regForm.user_rePassword.$invalid">Password confrimation is required.</span>
+	 						 <span ng-show="regForm.user_rePassword.$error.pattern">Password does not match.</span>
+	  					</span>
