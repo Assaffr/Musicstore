@@ -1,5 +1,15 @@
-app.controller( 'CheckoutController', function( $scope, CheckoutFactory, $window, AlbumsService, $routeParams) {
+app.controller( 'CheckoutController', function( $scope, CheckoutFactory, $window, $routeParams) {
+	$scope.checkout = {};
 	
+	$scope.completeCheckout = function( total ){
+		$scope.checkout["cart"] = angular.fromJson($window.localStorage.getItem( 'cart-storage' ));
+		$scope.checkout["total"] = total.toFixed( 1 );
+		console.log( $scope.checkout );
+		CheckoutFactory.checkout( $scope.checkout )
+			.success( function( result ) {
+				
+			});
+	}
 	
 
 	
