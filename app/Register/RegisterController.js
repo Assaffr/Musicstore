@@ -1,10 +1,17 @@
-app.controller( 'RegisterController', function( $scope, RegisterFactory ) {
+app.controller( 'RegisterController', function( $scope, RegisterFactory, LoginFactory, $location ) {
 	
 	
 	$scope.register_form = function(){
 			RegisterFactory.registerUser($scope.register)
 			.success( function( result ) {
-				
+				if (result = true){
+					LoginFactory.matchLogin($scope.register)
+						.success( function( result ) {
+							if (result = true){
+								$location.path('/');
+							}
+						});
+				}
 			});
 		
 	};

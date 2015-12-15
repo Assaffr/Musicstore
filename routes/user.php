@@ -20,3 +20,16 @@ $app->post('/matchlogin', function() use ($app, $user){
 	
 	echo json_encode( $session );
 });
+
+$app->get('/checksession/', function() use ($user){
+	$check = $user->checkSession();
+	
+	echo $check;
+});
+
+
+$app->delete('/logout/', function() use ($user){
+	$logOut = $user->logOut();
+	
+	echo $logOut;
+});

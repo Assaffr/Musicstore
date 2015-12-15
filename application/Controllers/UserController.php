@@ -36,15 +36,31 @@ class UserController extends Controller {
 
 	
 	public function buildSession( $results ) {
-		if ($results == false)
+		if ($results == false){
 			$_SESSION['login'] = false;
+			unset ($_SESSION['user_id']);
+			return $results;
+		}
 		else{
 			$_SESSION['login'] = true;
 			$_SESSION['user_id'] = (int)$results[0]['user_id'];
+			return true;
 		}
 			
 
-	return $_SESSION;
+		return false;
+	}	
+	
+	public function checkSession() {
+		if ($_SESSION['login'] = true && isset($_SESSION['user_id'])){
+			return 1;
+		}
+
+		return 0;
+	}	
+	
+	public function logOut() {
+		return session_destroy();
 	}	
 	
 }

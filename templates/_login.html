@@ -99,13 +99,13 @@
 						 <span class="required" ng-show="regForm.user_email.$dirty && regForm.user_email.$invalid">
 	 						 <span ng-show="regForm.user_email.$error.required">Email is required.</span>
 	 						 <span ng-show="regForm.user_email.$error.email">Invalid email address.</span>
-	 						 <span ng-show="regForm.user_email.$error.availability">Email address TAKEN!.</span>
+	 						 <span ng-show="regForm.user_email.$error.availability">Email address is taken.</span>
 	  					</span>
 						
 						<input autocomplete="off" type="password" ng-pattern="/^((?=.*[A-Z])(?=.*)[a-zA-Z\d]{6,})$/" data-ng-model="register.user_password"  name="user_password" id="user_password" placeholder="Password" ng-class="{invalid : regForm.user_password.$dirty && regForm.user_password.$invalid}" required>
 						 <span class="required" ng-show="regForm.user_password.$dirty && regForm.user_password.$invalid">
 	 						 <span ng-show="regForm.user_password.$error.required">Password is required.</span>
-	 						 <span ng-show="regForm.user_password.$error.pattern">Invalid password.</span>
+	 						 <span ng-show="regForm.user_password.$error.pattern">Password must be at least 6 characters, with at least one capital letter.</span>
 	  					</span>
 	  					
 	  					<input autocomplete="off" type="password" ng-model="register.user_repassword"  name="user_repassword" id="user_repassword" placeholder="Password confirmation" ng-class="{invalid : regForm.user_repassword.$dirty && regForm.user_repassword.$invalid}" required data-password-verify="register.user_password">
