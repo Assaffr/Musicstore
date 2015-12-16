@@ -62,9 +62,9 @@
 							
 								</div>
 								<br>
-								<img src="Images\wishlistheart.png">
-								<span ng-controller="FavoritesController" ng-hide="checkIfExistsInFavs(albums.album_id)" ng-click="addToFavorites(albums.album_id)">Add To Wishlist</span>
-								<span ng-controller="FavoritesController" ng-show="checkIfExistsInFavs(albums.album_id)" ng-click="removeFromFavs(albums.album_id)">Remove from Wishlist</span>
+								
+								<span ng-controller="FavoritesController" class="w-line" ng-hide="checkIfExistsInFavs(albums.album_id)" ng-click="addToFavorites(albums.album_id)"> <i id="heart"></i> Add To Wishlist</span>
+								<span ng-controller="FavoritesController" class="w-line" ng-show="checkIfExistsInFavs(albums.album_id)" ng-click="removeFromFavs(albums.album_id)"> <i id="heart" class="full-heart"></i> Remove from Wishlist</span>
 							</div>
 						
 						</article>

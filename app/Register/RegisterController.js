@@ -1,5 +1,6 @@
 app.controller( 'RegisterController', function( $scope, RegisterFactory, LoginFactory, $location ) {
 	
+	$scope.loading = false;
 	
 	$scope.register_form = function(){
 			RegisterFactory.registerUser($scope.register)

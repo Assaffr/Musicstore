@@ -934,4 +934,25 @@ div.row div.column:nth-child(1){
 .single-search-result:hover{
 	background-color: #E9EAED;
 }
-.
+
+i#heart{
+	width:16px;
+	height:13px;
+	background-image:url(/../Musicstore/Images/wishlistheartsprite.png);
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: 0px 0px;
+	display:inline-block;
+	cursor:pointer;
+	
+}
+
+.full-heart{
+	background-position: 0px -13px !important;	
+	
+}
+
+.w-line{
+	font-size:12px;
+	font-weight:bold;
+}

@@ -63,7 +63,7 @@
 		<div class="backboard" ng-show="regBox" ng-controller="RegisterController">
 			<div class="reg-box">
 				
-				<div class="loading" ng-show="false"></div>
+				<div class="loading" ng-show="loading"></div>
 					
 				<i class="ex-icon" ng-click="turnRegBox( false )"></i>
 				
@@ -116,7 +116,7 @@
 
 
 					</p>
-					<button ng-disabled="regForm.$invalid" ng-click="register_form()">Register</button>
+					<button ng-disabled="regForm.$invalid" ng-click="loading = true; register_form()">Register</button>
 					
 					</form>
 				<div class="C-B"></div>
