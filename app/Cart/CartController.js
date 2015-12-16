@@ -118,10 +118,10 @@ app.controller( 'CartController', function( $scope, CartFactory, $window, Albums
 			}
 			if (quantity)
 				return quantity
-			return 0;
+			return 1;
 			}
 		else
-			return 0;
+			return 1;
 	}
 	/**
 	*	getCartObject
@@ -135,7 +135,7 @@ app.controller( 'CartController', function( $scope, CartFactory, $window, Albums
 	$scope.getCartObject = function() {
 		cart = angular.fromJson($window.localStorage.getItem('cart-storage'));
 		var object = [];
-		if (cart.length){
+		if (cart){
 			for (i = 0; i < cart.length; i++){
 				object.push(cart[i][0].id);
 			}
