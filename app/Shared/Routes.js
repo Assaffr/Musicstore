@@ -11,8 +11,8 @@ app.config(['$routeProvider',
 			   controller: 'albumPage'
 			})
 		  
-			.when('/', {
-			   templateUrl: 'templates/_index.html',
+			.when('/home', {
+			   templateUrl: 'templates/_home.html',
 			   controller: 'MainController'
 			})
 			.when('/login', {
@@ -20,12 +20,12 @@ app.config(['$routeProvider',
 			   controller: 'LoginController'
 			})
 			
-			.when('/checkout', {
+			.when('/checkout/:currentStep', {
 			   templateUrl: 'templates/_checkout.html',
 			   controller: 'CheckoutController'
 			})
 		
 			.otherwise({
-				redirectTo : '/'
+				redirectTo : '/home'
 			})
 	}]);
