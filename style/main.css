@@ -723,7 +723,7 @@ input{
 	
 }
 
-input.invalid{
+input.ng-dirty.ng-invalid{
 	border:1px dashed red;
 	background-color:#F7E8E5;
 }
@@ -810,6 +810,12 @@ div.loading{
 	margin-bottom:8px;
 	
 }
+
+#Checkout-page a{
+	font-size:11px;	
+	
+}
+
 .inline{
 	float:left;
 	margin-right:12px;
