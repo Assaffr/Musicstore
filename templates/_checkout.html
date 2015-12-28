@@ -21,9 +21,9 @@
 							 <section>
 							 	<p class="full-description">
 							 		<span>Alex Tuner</span><br>
-							 		<span>London Price 432</span><br>
-							 		<span>Sheffield, 35660</span><br>
-							 		<span>T:0520000000</span><br>
+							 		<span>{{checkout.address}}</span><br>
+							 		<span>{{checkout.city}}<span ng-show="checkout.zipcode.length">,</span> {{checkout.zipcode}}</span><br>
+							 		<span ng-show="checkout.phone.length">T:</span><span>{{checkout.phone}}</span><br>
 							 	</p>
 							 
 							 </section>
@@ -35,7 +35,7 @@
 							 <section>
 							 	<p class="full-description">
 							 		<span>Alex Tuner</span><br>
-							 		<span>London Price 432</span><br>
+							 		<span></span><br>
 							 		<span>Sheffield, 35660</span><br>
 							 		<span>T:0520000000</span><br>
 							 	</p>
@@ -61,7 +61,7 @@
 								<p>
 									<label class="line" for="order_shipping_address">Address<span class="required">*</span> </label>
 									<br>
-									<input type="text" name="order_shipping_address" id="order_shipping_address" ng-model="checkout.address" ng-pattern="/^([a-zA-Z\s\d.]*?)$/" required>
+									<input type="text" name="order_shipping_address" id="order_shipping_address" ng-model="checkout.address" ng-pattern="/^([[a-zA-Z\s\d.]*?[\s][\d]{1,})$/" required>
 									<br>
 									
 									<span class="required" ng-show="step1.order_shipping_address.$dirty && step1.order_shipping_address.$invalid">
@@ -124,102 +124,124 @@
 							
 						</section>
 						
-						<div class="red-head">
+						<div class="red-head" ng-class="{'valid-head' : step2.$valid}">
 								<div class="circle">2</div>
 								<span>Payment Information</span>
 						</div>
 						
 						<section ng-show="checkCurrentStep( 'Step2' )">
-							<p>
-								<input type="radio" name="order_payment_method" value="money_order" id="check" ng-model="checkout.pay_method">
-								<label  for="check">Check / Money order</label>
-
-							</p>
-							
-							<p>
-								<input type="radio" name="order_payment_method" value="credit_card" id="CC" ng-model="checkout.pay_method">
-								<label for="CC">Credit Card (saved)</label>
-
-							</p>
-							
-							<div id="CC-inputs">
-							
+						
+							<form name="step2">
 								<p>
-									<label class="line" for="card_name">Name on Card<span class="required">*</span> </label>
-									<br>
-									<input type="text" name="card_name" id="card_name">
-									<br>
-									<span ng-show="false" class="required">This is a required field</span>
+									<input type="radio" name="order_payment_method" value="money_order" id="check" ng-model="checkout.pay_method" ng-required="!checkout.pay_method">
+									<label  for="check">Check / Money order</label>
+	
 								</p>
 								
 								<p>
-									<label class="line" for="CC_type">Credit Card Type<span class="required">*</span> </label>
-									<br>
-									<select name="CC_type" id="CC_type">
-										<option value="visa">Visa</option>
-										<option value="masterCard">Master Card</option>
-										<option value="american_express">American Express</option>
-										<option vlaue="diners">Diners </option>
-									</select>
+									<input type="radio" name="order_payment_method" value="credit_card" id="CC" ng-model="checkout.pay_method" ng-required="!checkout.pay_method">
+									<label for="CC">Credit Card (saved)</label>
+	
+								</p>
+								
+								<div id="CC-inputs" ng-if="checkout.pay_method == 'credit_card' " class="animate-if">
+								
+									<p>
+										<label class="line" for="card_name">Name on Card<span class="required">*</span> </label>
+										<br>
+										<input type="text" name="card_name" id="card_name" ng-pattern="/^([a-zA-Z]{2,}[\s][a-zA-Z]{2,})$/" ng-model="checkout.card_name" required>
+										<br>
+										<span ng-show="step2.card_name.$invalid && step2.card_name.$dirty" class="required">
+											<span ng-show="step2.card_name.$error.required">This is a required field</span>
+											<span ng-show="step2.card_name.$error.pattern">Invalid Name</span>
+										</span>
+									</p>
 									
-								</p>
-								
-								<p>
-									<label class="line" for="CC_number">Credit Card Number<span class="required">*</span> </label>
-									<br>
-									<input type="text" name="CC_number" id="CC_number">
-									<br>
-									<span ng-show="false" class="required">This is a required field</span>
-								</p>
-								
-								<p>
-									<label class="line" for="CC_expiration_month">Expiration date<span class="required">*</span> </label>
-									<br>
-									<select name="CC_expiration_month" id="CC_expiration_month" >
-										<option value="01">01 - January</option>       
-										<option value="02">02 - February</option>       
-										<option value="03">03 - March</option>       
-										<option value="04">04 - April</option>       
-										<option value="05">05 - May</option>       
-										<option value="06">06 - June</option>       
-										<option value="07">07 - July</option>       
-										<option value="08">08 - August</option>       
-										<option value="09">09 - September</option>       
-										<option value="10">10 - October</option>       
-										<option value="11">11 - November</option>       
-										<option value="12">12 - December</option> 
-									</select>
+									<p>
+										<label class="line" for="CC_type">Credit Card Type<span class="required">*</span> </label>
+										<br>
+										<select name="CC_type" id="CC_type" ng-model="checkout.CC_type"  required>
+											<option value="" ng-selected="true">Select a card</option>
+											<option value="visa">Visa</option>
+											<option value="masterCard">Master Card</option>
+											<option value="american_express">American Express</option>
+											<option vlaue="diners">Diners </option>
+										</select>
+										<span ng-show="step2.CC_type.$invalid && step2.CC_type.$touched" class="required">
+											<span ng-show="step2.CC_type.$error.required">This is a required field</span>
+										</span>
+										
+									</p>
 									
-									<select name="CC_expiretion_year" id="CC_expiretion_year" >
-										<option value="15">2015</option>       
-										<option value="16">2016</option>       
-										<option value="17">2017</option>       
-										<option value="18">2018</option>       
-										<option value="19">2019</option>       
-										<option value="20">2020</option>       
-										<option value="21">2021</option>       
-										<option value="22">2022</option>       
-
-									</select>
+									<p>
+										<label class="line" for="CC_number">Credit Card Number<span class="required">*</span> </label>
+										<br>
+										<input type="text" maxlength="16" name="CC_number" id="CC_number" ng-pattern="/^([\d]{16})$/" ng-model="checkout.CC_number" required>
+										<br>
+										
+										<span ng-show="step2.CC_number.$invalid && step2.CC_number.$dirty" class="required">
+											<span ng-show="step2.CC_number.$error.required">This is a required field</span>
+											<span ng-show="step2.CC_number.$error.pattern">Invalid Number</span>
+										</span>
+									</p>
 									
-								</p>
-								
-								<p>
-									<label class="line" for="CC_verification_number">Card Verification Number<span class="required">*</span> </label>
-									<br>
-									<input type="text" maxlength="3" name="CC_verification_number" id="CC_verification_number"> <label  for="CC_verification_number">What is this?</label>
-									<br>
+									<p>
+										<label class="line" for="CC_expiration_month">Expiration date<span class="required">*</span> </label>
+										<br>
+										<select name="CC_expiration_month" id="CC_expiration_month" >
+											<option value="01">01 - January</option>       
+											<option value="02">02 - February</option>       
+											<option value="03">03 - March</option>       
+											<option value="04">04 - April</option>       
+											<option value="05">05 - May</option>       
+											<option value="06">06 - June</option>       
+											<option value="07">07 - July</option>       
+											<option value="08">08 - August</option>       
+											<option value="09">09 - September</option>       
+											<option value="10">10 - October</option>       
+											<option value="11">11 - November</option>       
+											<option value="12">12 - December</option> 
+										</select>
+										
+										<select name="CC_expiretion_year" id="CC_expiretion_year" >
+											<option value="15">2015</option>       
+											<option value="16">2016</option>       
+											<option value="17">2017</option>       
+											<option value="18">2018</option>       
+											<option value="19">2019</option>       
+											<option value="20">2020</option>       
+											<option value="21">2021</option>       
+											<option value="22">2022</option>       
+	
+										</select>
+										
+									</p>
 									
-								</p>
+									<p>
+										<label class="line" for="CC_verification_number">Card Verification Number<span class="required">*</span> </label>
+										<br>
+										<input type="text" maxlength="3" name="CC_verification_number" ng-pattern="/^([\d]{3})$/" id="CC_verification_number" ng-model="checkout.CC_verification_number" required> 
+										<label  for="CC_verification_number">What is this?</label>
+										<br>
+										<span ng-show="step2.CC_verification_number.$invalid && step2.CC_verification_number.$dirty" class="required">
+											<span ng-show="step2.CC_verification_number.$error.required">This is a required field</span>
+											<span ng-show="step2.CC_verification_number.$error.pattern">Invalid Number</span>
+										</span>
+										
+									</p>
+									
+									
 								
-								<button ng-click="completeCheckout(total)">Continue</button>
-							
-							</div>
-							
+								</div>
+								
+								<button ng-disabled="step2.$invalid" ng-click="goTo('#/checkout/Step3')">Continue</button>
+								
+							</form>
+								
 							<div class="C-B"></div>
 						</section>
 						
-						<div class="red-head">
+						<div class="red-head" ng-class="{'valid-head' : checkCurrentStep('Step3')}">
 								<div class="circle">3</div>
 								<span>Order Review</span>
 						</div>
@@ -257,7 +279,7 @@
 								<span class="full-description">Forgot an Item? &nbsp</span>
 								<a href="#/home">Edit Your Cart</a>
 								
-								<button>Place Order</button>
+								<button ng-disabled="step1.$invalid || step2.$invalid"  ng-click="completeCheckout(total)">Place Order</button>
 							</div>
 						</div>
 						
