@@ -115,6 +115,11 @@ header a{
 	
 }
 
+.bold{
+	font-weight:bold;
+	
+}
+
 #cart_icon{
 	float:right;
 	width:60px;
@@ -415,6 +420,7 @@ button{
 	border:none;
 	font-size:10px;
 	margin-bottom:8px;
+	cursor:pointer;
 }
 
 #cart h6{
@@ -527,7 +533,7 @@ button{
 }
 
 .full-description{
-	font-size:60%;
+	font-size:11px;
 	color:#858584;
 	
 }
@@ -799,9 +805,14 @@ div.loading{
 }
 
 .red-head span{
-	color:#fff;
+	color:#fff !important;
 	margin-left:6px;
-	font-size:70%;
+	font-size:70% !important;
+}
+
+.red-head span a{
+	color:#fff;
+	text-decoration: underline;
 }
 
 #Checkout-page section{
