@@ -2,6 +2,11 @@ app.controller( 'RegisterController', function( $scope, RegisterFactory, LoginFa
 	
 	$scope.loading = false;
 	
+	$scope.SetTheSession = function ( params ){
+		LoginFactory.setLocalSession( params );
+
+	};
+	
 	$scope.register_form = function(){
 			RegisterFactory.registerUser($scope.register)
 			.success( function( result ) {
@@ -9,6 +14,7 @@ app.controller( 'RegisterController', function( $scope, RegisterFactory, LoginFa
 					LoginFactory.matchLogin($scope.register)
 						.success( function( result ) {
 							if (result = true){
+								//$scope.SetTheSession( result )
 								$location.path('/');
 							}
 						});

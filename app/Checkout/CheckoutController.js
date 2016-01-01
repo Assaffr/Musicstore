@@ -1,6 +1,8 @@
 app.controller( 'CheckoutController', function( $scope, CheckoutFactory, LoginFactory, $window, $location, $routeParams) {
 	$scope.checkout = {};
 	
+
+	
 	
 	$scope.checkLogin = function(){
 		LoginFactory.checkLoginStatus()
@@ -9,20 +11,26 @@ app.controller( 'CheckoutController', function( $scope, CheckoutFactory, LoginFa
 					$scope.userDetails = result;
 				}
 				else if (result.login !== "true") {
-					$scope.kickFromCheckout();
+					$scope.goTo('#/');
 				}
-			});
-	}
+			}) 
+	};
+	
+	$scope.getSessionParams = function (){
+	 	$scope.checkoutSession = CheckoutFactory.getCheckoutInfo(); 
+		
+	 	
+	};
+	
 	
 	$scope.checkLogin();
-	
-	$scope.kickFromCheckout = function(){
-		$location.path('/');
-	};
+	$scope.getSessionParams();
+
 	
 	$scope.completeCheckout = function( total ){
 		$scope.checkout["cart"] = angular.fromJson($window.localStorage.getItem( 'cart-storage' ));
 		$scope.checkout["total"] = total.toFixed( 1 );
+		
 		console.log( $scope.checkout );
 		CheckoutFactory.checkout( $scope.checkout )
 			.success( function( result ) {

@@ -4,6 +4,11 @@ app.controller( 'LoginController', function( $scope, LoginFactory, $location ) {
 		$scope.regBox = state;
 	};
 	
+	$scope.SetTheSession = function ( params ){
+		LoginFactory.setLocalSession( params );
+
+	};
+	
 	$scope.login_form = function(){
 		LoginFactory.matchLogin($scope.login)
 			.success( function( result ) {
@@ -12,22 +17,29 @@ app.controller( 'LoginController', function( $scope, LoginFactory, $location ) {
 	};
 	
 	$scope.logMessage = "";
+	
+	
+	
 	$scope.checkLoginStatus = function(){
+		
 		LoginFactory.checkLoginStatus()
 			.success( function( result ) {
 				if (result.login == "true"){
+					$scope.SetTheSession( result );
 					$scope.checkIfLoggedIn = true;
-					$scope.logMessage = "Log out";
 					$scope.kickFromLogin();
+					console.log( result.login )
 				}
 				else{
 					$scope.checkIfLoggedIn = false;
-					$scope.logMessage = "Log In";
 				}
 			});
 	}
 	
-	$scope.checkLoginStatus();
+	
+	$scope.checkLoginStatus()
+	
+
 	
 	
 	$scope.kickFromLogin = function(){
@@ -35,11 +47,10 @@ app.controller( 'LoginController', function( $scope, LoginFactory, $location ) {
 	};
 	
 	$scope.logOut = function(){
-		$scope.logMessage = "Log In";
-		$scope.checkIfLoggedIn = false;
 		LoginFactory.logOut()
 			.success( function( result ) {
-				
+				$scope.checkIfLoggedIn = false;	
+				LoginFactory.destroyLocalSession();
 			});
 	};
 });

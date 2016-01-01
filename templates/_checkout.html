@@ -20,7 +20,7 @@
 							 
 							 <section>
 							 	<p class="full-description">
-							 		<span>Alex Tuner</span><br>
+							 		<span>{{checkoutSession.user_firstname}} {{checkoutSession.user_lastname}}</span><br>
 							 		<span>{{checkout.address}}</span><br>
 							 		<span>{{checkout.city}}<span ng-show="checkout.zipcode.length">,</span> {{checkout.zipcode}}</span><br>
 							 		<span ng-show="checkout.phone.length">T:</span><span>{{checkout.phone}}</span><br>

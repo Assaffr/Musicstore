@@ -58,6 +58,7 @@ header .centerd nav ul li, #breadcrumb ul li{
 	display:inline-block;
 	list-style-type: none;
 	padding: 0px 20px 0 0;
+	cursor:pointer;
 }
 
 a {

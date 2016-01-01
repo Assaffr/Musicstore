@@ -17,6 +17,7 @@ CheckoutModule.factory( 'CheckoutFactory', ['$window', '$rootScope', '$http', fu
 	};
 	
 	
+	
 	return CheckoutFactory;
 	
 }]);
