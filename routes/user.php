@@ -24,7 +24,7 @@ $app->post('/matchlogin', function() use ($app, $user){
 $app->get('/checksession/', function() use ($user){
 	$check = $user->checkSession();
 	
-	echo $check;
+	echo json_encode( $check );
 });
 
 

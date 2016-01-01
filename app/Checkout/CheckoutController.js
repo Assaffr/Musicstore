@@ -1,8 +1,24 @@
-app.controller( 'CheckoutController', function( $scope, CheckoutFactory, $window, $routeParams) {
+app.controller( 'CheckoutController', function( $scope, CheckoutFactory, LoginFactory, $window, $location, $routeParams) {
 	$scope.checkout = {};
 	
 	
-
+	$scope.checkLogin = function(){
+		LoginFactory.checkLoginStatus()
+			.success( function( result ) {
+				if (result.login == "true"){
+					$scope.userDetails = result;
+				}
+				else if (result.login !== "true") {
+					$scope.kickFromCheckout();
+				}
+			});
+	}
+	
+	$scope.checkLogin();
+	
+	$scope.kickFromCheckout = function(){
+		$location.path('/');
+	};
 	
 	$scope.completeCheckout = function( total ){
 		$scope.checkout["cart"] = angular.fromJson($window.localStorage.getItem( 'cart-storage' ));

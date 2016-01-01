@@ -15,7 +15,7 @@ app.controller( 'LoginController', function( $scope, LoginFactory, $location ) {
 	$scope.checkLoginStatus = function(){
 		LoginFactory.checkLoginStatus()
 			.success( function( result ) {
-				if (result == true){
+				if (result.login == "true"){
 					$scope.checkIfLoggedIn = true;
 					$scope.logMessage = "Log out";
 					$scope.kickFromLogin();

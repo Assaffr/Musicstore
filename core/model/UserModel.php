@@ -28,7 +28,7 @@ class UserModel extends Model {
 	
 	public function matchLogin( $details ) {
 	$query = "
-		SELECT user_id FROM users WHERE user_email = '".$details['user_email']."' AND `user_password` = '" . md5( $details['user_password'] ) . "'
+		SELECT user_id, user_firstname, user_lastname FROM users WHERE user_email = '".$details['user_email']."' AND `user_password` = '" . md5( $details['user_password'] ) . "'
 		";		
 		
 	$resultSet = $this->_database->query($query);

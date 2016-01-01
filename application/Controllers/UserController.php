@@ -44,6 +44,8 @@ class UserController extends Controller {
 		else{
 			$_SESSION['login'] = true;
 			$_SESSION['user_id'] = (int)$results[0]['user_id'];
+			$_SESSION['user_firstname'] = $results[0]['user_firstname'];
+			$_SESSION['user_lastname'] = $results[0]['user_lastname'];
 			return true;
 		}
 			
@@ -53,7 +55,7 @@ class UserController extends Controller {
 	
 	public function checkSession() {
 		if ($_SESSION['login'] = true && isset($_SESSION['user_id'])){
-			return 1;
+			return Array("login" => "true", "user_id" => $_SESSION['user_id'], "user_firstname" => $_SESSION['user_firstname'], "user_lastname" => $_SESSION['user_lastname']);
 		}
 
 		return 0;
