@@ -15,6 +15,14 @@ app.controller( 'RegisterController', function( $scope, RegisterFactory, LoginFa
 						.success( function( result ) {
 							if (result = true){
 								//$scope.SetTheSession( result )
+									LoginFactory.checkLoginStatus()
+										.success( function( result ) {
+											if (result.login == "true"){
+												$scope.userDetails = result;
+												//^^^^^ do whatever you want with this, but the details are here
+												console.log($scope.userDetails)
+											}
+										});
 								$location.path('/');
 							}
 						});
