@@ -14,12 +14,11 @@ app.controller( 'RegisterController', function( $scope, RegisterFactory, LoginFa
 					LoginFactory.matchLogin($scope.register)
 						.success( function( result ) {
 							if (result = true){
-								//$scope.SetTheSession( result )
 									LoginFactory.checkLoginStatus()
 										.success( function( result ) {
 											if (result.login == "true"){
 												$scope.userDetails = result;
-												//^^^^^ do whatever you want with this, but the details are here
+												$scope.SetTheSession( result );
 												console.log($scope.userDetails)
 											}
 										});
