@@ -10,7 +10,8 @@ class CheckoutController extends Controller {
     }
 	
 	public function finishCheckout( $data ) {
-		$success = $this->model->finishCheckout($data);
+		$cart = $this->model->addAlbumCartData($data["cart"]);
+		$success = $this->model->finishCheckout( $data );
 		return $success;
 	}
 	
