@@ -45,8 +45,8 @@ class AlbumController extends Controller {
 }
 
 	
-	public function getLatest18Albums() {
-		$albums = $this->model->getLatest18Albums();
+	public function getLatestAlbums() {
+		$albums = $this->model->getLatestAlbums();
 		
 		if ( !$albums )
 			return null;

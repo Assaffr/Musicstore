@@ -11,7 +11,7 @@ $app->get('/album', function() use ($app, $album){
 
 
 $app->get('/album/latest', function() use ($app, $album){
-	$albums = $album->getLatest18Albums();
+	$albums = $album->getLatestAlbums();
 	
 	echo json_encode( $albums );
 });

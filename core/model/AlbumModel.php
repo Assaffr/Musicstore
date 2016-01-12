@@ -34,7 +34,7 @@ class AlbumModel extends Model {
 		return $albums;
 	}
 	
-		public function getLatest18Albums() {
+		public function getLatestAlbums() {
 		$result = $this->_database->query("
 					SELECT albums.album_id, albums.album_name, albums.album_artist, albums.album_duration, albums.album_release_year, albums.album_description, albums.album_long_description, albums.album_created, albums.album_price, images_to_albums.image_id, images.image_path 
 					FROM albums 
@@ -44,7 +44,7 @@ class AlbumModel extends Model {
 					ON images_to_albums.image_id = images.image_id
 					GROUP BY albums.album_id
 					ORDER BY albums.album_created 
-					DESC LIMIT 18
+					DESC LIMIT 26
 				");
 		$albums = array();
 		while ($row = mysqli_fetch_assoc ($result) )
