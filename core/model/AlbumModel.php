@@ -56,7 +56,14 @@ class AlbumModel extends Model {
 	}
 	public function getAlbumByID( $id ) {
 		$result = $this->_database->query("
-					SELECT * FROM `albums` WHERE `album_id` = ". $id ."
+					SELECT 
+					albums.album_id, albums.album_name, albums.album_artist, albums.album_duration, albums.album_release_year, albums.album_description, albums.album_long_description, albums.album_created, albums.album_price, genres_to_albums.genre_id, genres.genre_name
+					FROM albums 
+					LEFT JOIN genres_to_albums
+					ON albums.album_id = genres_to_albums.album_id
+					LEFT JOIN genres
+					ON genres_to_albums.genre_id = genres.genre_id
+					WHERE albums.album_id = ". $id ."
 				");
 		$albums = array();
 		while ($row = mysqli_fetch_assoc ($result) )
