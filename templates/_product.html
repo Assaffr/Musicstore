@@ -2,7 +2,8 @@
 			<div id="breadcrumb" class="centerd">
 				<ul class="inline-list">
 					<li><a href="index.html">Home</a></li>
-					<li class="located">Category</li>
+					<li><a href="#/category/{{albums.genre_name}}">{{albums.genre_name}}</a></li>
+					<li class="located">{{albums.album_name}} ({{albums.album_release_year}})</li>
 				</ul>
 			</div>
 			
@@ -37,7 +38,7 @@
 						
 						<article>
 							<div id="product-head">
-								<h2>{{albums.album_artist | uppercase}} - IN {{albums.album_name | uppercase}} ({{albums.album_release_year}})</h2>
+								<h2>{{albums.album_artist | uppercase}} - {{albums.album_name | uppercase}} ({{albums.album_release_year}})</h2>
 								<p>Availability: <span class="In-stock"> In stock</span> </p>
 							</div>
 							<span class="stock">Only 1000 left</span>
